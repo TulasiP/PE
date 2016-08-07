@@ -1,0 +1,1 @@
+sqlcmd -S RAMESHBABUP -U sa -P ABCD11!!aa -i "C:\Users\Rameshbabu-P\Documents\GitHub\PE\Tools\pci.sql"

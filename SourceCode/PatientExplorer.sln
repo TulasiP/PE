@@ -7,7 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientExplorer", "PatientE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBA9CD34-76F3-430D-A0E9-1F819613AA4F}"
 	ProjectSection(SolutionItems) = preProject
-		pci.sql = pci.sql
+		..\Tools\LaunchAutomationScript.vbs = ..\Tools\LaunchAutomationScript.vbs
+		..\Tools\pci.sql = ..\Tools\pci.sql
+		..\Problems faced during project development.txt = ..\Problems faced during project development.txt
 	EndProjectSection
 EndProject
 Global

@@ -41,12 +41,13 @@ namespace PatientExplorer
             PatientInformation patientInfo = new PatientInformation();
             patientInfo.UID = UID.Text;
             patientInfo.Name = Name.Text;
-            //DateTime parsedDateTime;
-            
-            //if (DateTime.TryParseExact(DOB.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDateTime))
-            //    patientInfo.DOB = parsedDateTime;
+            DateTime result;
+            if (DateTime.TryParseExact(DOB.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out result))
+            {
+                patientInfo.DOB = result;
+            }
 
-            //patientInfo.Age = Convert.ToInt32(Age.Text);
+            patientInfo.Age = Convert.ToInt32(Age.Text);
             patientInfo.Sex = Sex.Text;
             patientInfo.Height = Height.Text;
             patientInfo.Weight = Weight.Text;
@@ -108,12 +109,12 @@ namespace PatientExplorer
                 }
 
                 DateTime result;
-                if (!DateTime.TryParseExact(DOB.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out result))
+                string format = "dd/MM/yyyy";
+                if (!DateTime.TryParseExact(DOB.Text, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out result))
                 {
                     MessageBox.Show("Enter a valid date");
                     DOB.Focus();
                 }
-
             }
             catch (Exception ex)
             {

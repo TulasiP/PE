@@ -6,3 +6,6 @@ Solution: Go to Record -> Record and Run settings -> Windows Applications -> Rec
 
 Problem: How to open last run or old run report
 Solution: Go to View -> Last Run Results -> File -> Open -> Test Name -> Browse -> Test Project -> Run name -> Selct result from drop down -> open
+
+Proble: 
+Solution: 

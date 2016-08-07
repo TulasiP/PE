@@ -1,7 +1,7 @@
 ﻿
 '=====================================================================================================reading from excel=======================================================================================================================================
 Set xl=CreateObject("Excel.Application")
-Set wb=xl.Workbooks.Open("C:\Users\Rameshbabu-P\OneDrive\Patient Explorer Project\TestCode\AutomationInput.xls")
+Set wb=xl.Workbooks.Open("C:\Users\Rameshbabu-P\Documents\GitHub\PE\TestCode\AutomationInput.xls")
 xl.Visible= true
 Set ws=wb.worksheets(1)
 rows=ws.usedrange.rows.count
@@ -19,8 +19,8 @@ For row = 2 to rows
 	 	aadhaarno = ws.cells(row,10)
 '	 	aadhaarno2 = vartype(ws.cells(row,10))
 	 	
-	 	SystemUtil.Run("C:\Users\Rameshbabu-P\OneDrive\Patient Explorer Project\SourceCode\PatientExplorer\bin\Release\PatientExplorer")
-		SwfWindow("PatientExplorer").SwfEdit("UID").Type ""
+	 	SystemUtil.Run("C:\Users\Rameshbabu-P\Documents\GitHub\PE\SourceCode\PatientExplorer\bin\Release\PatientExplorer")
+'		SwfWindow("PatientExplorer").SwfEdit("UID").Type ""
 		SwfWindow("PatientExplorer").SwfEdit("UID").Type uid
 		SwfWindow("PatientExplorer").SwfEdit("Name").Set name
 		SwfWindow("PatientExplorer").SwfEdit("DOB").Set dob
@@ -34,7 +34,7 @@ For row = 2 to rows
 		SwfWindow("PatientExplorer").Close
 Next
 
-'wb.Close
+wb.Close
 Set wb=nothing
 Set xl=nothing
 '================================================================================================================end==============================================================================================================================================='
