@@ -12,17 +12,17 @@ end
 
 GO
 --exec xp_cmdshell 'del /f /q C:\dir *.*'
-exec xp_cmdshell 'del /f /q C:\Users\Rameshbabu-P\Documents\GitHub\PE\Temp\hisdb.mdf'
-exec xp_cmdshell 'del /f /q C:\Users\Rameshbabu-P\Documents\GitHub\PE\Temp\hisdb_log.ldf'
+exec xp_cmdshell 'del /f /q C:\Users\Rameshbabu-P\Documents\GitHub\bin\database\hisdb.mdf'
+exec xp_cmdshell 'del /f /q C:\Users\Rameshbabu-P\Documents\GitHub\bin\database\hisdb_log.ldf'
 
 GO
 
 CREATE DATABASE [pcidb]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'hisdb', FILENAME = N'C:\Users\Rameshbabu-P\Documents\GitHub\PE\Temp\hisdb.mdf')
+( NAME = N'hisdb', FILENAME = N'C:\Users\Rameshbabu-P\Documents\GitHub\bin\database\hisdb.mdf')
  LOG ON 
-( NAME = N'hisdb_log', FILENAME = N'C:\Users\Rameshbabu-P\Documents\GitHub\PE\Temp\hisdb_log.ldf')
+( NAME = N'hisdb_log', FILENAME = N'C:\Users\Rameshbabu-P\Documents\GitHub\bin\database\hisdb_log.ldf')
 GO
 
 use [pcidb]

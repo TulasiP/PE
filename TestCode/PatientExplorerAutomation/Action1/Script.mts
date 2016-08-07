@@ -19,7 +19,7 @@ For row = 2 to rows
 	 	aadhaarno = ws.cells(row,10)
 '	 	aadhaarno2 = vartype(ws.cells(row,10))
 	 	
-	 	SystemUtil.Run("C:\Users\Rameshbabu-P\Documents\GitHub\PE\SourceCode\PatientExplorer\bin\Release\PatientExplorer")
+	 	SystemUtil.Run("C:\Users\Rameshbabu-P\Documents\GitHub\bin\Release\PatientExplorer")
 '		SwfWindow("PatientExplorer").SwfEdit("UID").Type ""
 		SwfWindow("PatientExplorer").SwfEdit("UID").Type uid
 		SwfWindow("PatientExplorer").SwfEdit("Name").Set name
