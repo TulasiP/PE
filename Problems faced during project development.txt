@@ -1,0 +1,8 @@
+Problem: Unable to see final report with Passed, Failed and Warnings
+Solution: Go to UFT12.5x > Tools > Options > General > Run Sessions > Report Format > Select "Run Results Viewer Report" instead of "HTML Report"
+
+Problem: Unable to get steps while recording
+Solution: Go to Record -> Record and Run settings -> Windows Applications -> Record and Run only on -> Select 3 check boxes
+
+Problem: How to open last run or old run report
+Solution: Go to View -> Last Run Results -> File -> Open -> Test Name -> Browse -> Test Project -> Run name -> Selct result from drop down -> open
