@@ -1,0 +1,1 @@
+﻿var __testDataSource={items:[{dataFilePath:'Default.xls',dataFileFormat:'excel',dataFileFolder:'C:\\Users\\Rameshbabu-P\\Documents\\GitHub\\PE\\TestCode\\PatientExplorerAutomation\\Res1',namePairs:[]}]};
