@@ -1,5 +1,7 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -92,6 +94,10 @@ public class Main extends Application
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 private void birthdayValidation() 
 {
+	System.out.println("enter date of birth to calculate day of the week");
+	Scanner reader = new Scanner(System.in);
+	String dateOfBirth = reader.nextLine();
+	System.out.println(dateOfBirth);
 	CalculateWeekday calc=new CalculateWeekday();
 	System.out.println(calc.getWeekday());
 		
@@ -144,7 +150,7 @@ private boolean weightValidation()
 		}
 		if(weight<=300)
 		{
-			errorMessageBox("weight is applicable");
+			System.out.println("weight is applicable");
 			return true;
 		}
 		else
@@ -250,7 +256,7 @@ private boolean dobValidation()
 		}
 		else
 		{
-			errorMessageBox("greater than today date is not valid");
+			System.out.println("greater than today date is not valid");
 		}
 		try
 		{
@@ -273,7 +279,7 @@ private boolean dobValidation()
 			String male="male";
 			if(sex.compareTo(female)==0||sex.compareTo(male)==0)
 			{
-				errorMessageBox("It should accepts");
+				System.out.println("It should accepts");
 			}
 			else
 			{
@@ -288,7 +294,7 @@ private boolean dobValidation()
 			long a=Long.parseLong(ageText.getText());
 			if(a<=150)
 			{
-				errorMessageBox("given age is accepted");
+				System.out.println("given age is accepted");
 			}
 			else
 			{
@@ -317,7 +323,7 @@ private boolean dobValidation()
 		for(int i=0;i<=name.length()-1;i++)
 		{
 			asciinumber=name.charAt(i);
-			System.out.println(asciinumber);
+//			System.out.println(asciinumber);
 			
 			if(asciinumber>=97 && asciinumber<=122 || asciinumber>=65 && asciinumber<=90)
 			{
@@ -344,15 +350,15 @@ private boolean dobValidation()
 			long a=Long.parseLong(uidText.getText());
 			if(a<=0)
 			{
-				errorMessageBox("In UID zero value and negative values are not accepted ");
+				errorMessageBox("In UID zero value and negative    values are not accepted ");
 			}
-			if(a<=9999999999l)
+			if(a<=9999999999L)
 			{
 				return true;
 			}
 			else
 			{
-				System.out.println("It is not applicable");
+				errorMessageBox("It is not applicable");
 				return false;
 			}
 		}

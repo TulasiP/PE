@@ -1,12 +1,15 @@
 package calculateWeekday;
 
+import java.util.Scanner;
+
 public class CalculateWeekday 
 {
 	public String getWeekday()
 	{
-		    String dateOfBirth = "28-06-1981";
+			
+		    //String dateOfBirth = "28-06-1981";
 		    String str = dateOfBirth;
-	        String split[] = str.split("-");
+	        String split[] = str.split("/");
 			int date=Integer.parseInt(split[0]);
 			int month=Integer.parseInt(split[1]);
 			int year=Integer.parseInt(split[2]);
