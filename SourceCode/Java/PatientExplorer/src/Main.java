@@ -115,7 +115,7 @@ private boolean aadhaarnoValidation()
 	}
 	catch(Exception ex)
 	{
-		errorMessageBox("aadhaar should only contain numbers");
+		errorMessageBox("Aadhaar number accept only numbers");
 		return false;
 	}
 	
@@ -125,16 +125,41 @@ private boolean aadhaarnoValidation()
 private void addressValidation() 
 {
 
+	try
+	{
 		String address=(addressText.getText());
-		String address1="gdfkjshk";
-		if(address.compareTo(address1)>0)
+		//String address1="gdfkjshk";
+//		if(address.compareTo(address1)>0)
+//		{
+//			System.out.println("Address is satisfied");
+//		}
+//		else
+//		{
+//			errorMessageBox("Address doesn’t accept only numbers");
+//		}
+		int asciinumber=0;
+		int ascii=address.charAt(0);
+		System.out.println(ascii);
+		for(int i=0;i<=address.length()-1;i++)
 		{
-			errorMessageBox("Address is satisfied");
+			asciinumber=address.charAt(i);
+//			System.out.println(asciinumber);
+			
+			if(asciinumber>=97 && asciinumber<=122 || asciinumber>=65 && asciinumber<=90 || asciinumber>=48 && asciinumber<=57|| asciinumber==32 || asciinumber==46 || asciinumber==35 || asciinumber==64)
+			{
+				System.out.println("Address is satisfied");
+			}
+			else
+			{
+				errorMessageBox("Address doesn’t accept any special characters other than #, .(dot) and @");
+				break;
+			}
 		}
-		else
-		{
-			errorMessageBox("Address should only contain characters and numbers combination");
-		}
+	}
+	catch(Exception ex)
+	{
+		errorMessageBox("Address doesn’t accept only numbers");
+	}
 	
 }
 
@@ -146,22 +171,22 @@ private boolean weightValidation()
 		long weight=Long.parseLong(weightText.getText());
 		if(weight<=0)
 		{
-			errorMessageBox("In weight negative values are not accepted ");	
+			errorMessageBox("Weight doesn’t accept negative numbers");	
 		}
 		if(weight<=300)
 		{
-			System.out.println("weight is applicable");
+			System.out.println("weight is accepted");
 			return true;
 		}
 		else
 		{
-			errorMessageBox("weight is not applicable");
+			errorMessageBox("Weight doesn’t accept more than 300");
 			return false;
 		}
 	}
 	catch(Exception ex)
 	{
-		errorMessageBox("weight should only contain numbers");
+		errorMessageBox("Weight accepts only numbers");
 		return false;
 	}
 }		
@@ -276,14 +301,15 @@ private boolean dobValidation()
 	{
 			String sex=(sexText.getText());
 			String female="female";
-			String male="male";
-			if(sex.compareTo(female)==0||sex.compareTo(male)==0)
+			String male="male"; 
+			String other="other";
+			if(sex.compareTo(female)==0||sex.compareTo(male)==0||sex.compareTo(other)==0)
 			{
 				System.out.println("It should accepts");
 			}
 			else
 			{
-				errorMessageBox("only male or female");
+				errorMessageBox("Sex can’t be given other than Male, Female and Other");
 			}
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -298,16 +324,16 @@ private boolean dobValidation()
 			}
 			else
 			{
-				errorMessageBox("In age field more than 150 age is not accepted");
+				errorMessageBox("Age can’t exceed 150 years");
 			}
 			if(a<=0)
 			{
-				errorMessageBox("given age should not be in zero and negative values");;
+				errorMessageBox("Age can’t accept negative numbers");;
 			}
 		}
 		catch(Exception ex)
 		{
-			errorMessageBox("Age should only contain numbers");
+			errorMessageBox("Age accepts only numbers");
 			return false;
 		}
 		return false;
@@ -325,20 +351,20 @@ private boolean dobValidation()
 			asciinumber=name.charAt(i);
 //			System.out.println(asciinumber);
 			
-			if(asciinumber>=97 && asciinumber<=122 || asciinumber>=65 && asciinumber<=90)
+			if(asciinumber>=97 && asciinumber<=122 || asciinumber>=65 && asciinumber<=90 || asciinumber==32)
 			{
 				System.out.println("ascii value is avaliable");
 			}
 			else
 			{
-				errorMessageBox("ascii value is not avaliable");
+				errorMessageBox("Name doesn’t accept special characters other than space");
 				break;
 			}
 		}
 
 			if(name.length()>50)
 			{
-				errorMessageBox("Name should contain only 50 charcters");
+				errorMessageBox("Length of the name can’t be more than 50 characters");
 			}
 	}
 	
@@ -348,9 +374,13 @@ private boolean dobValidation()
 		try  
 		{
 			long a=Long.parseLong(uidText.getText());
+			if(a==0)
+			{
+				errorMessageBox("UID can’t be zero ");
+			}
 			if(a<=0)
 			{
-				errorMessageBox("In UID zero value and negative    values are not accepted ");
+				errorMessageBox("UID doesn’t accept negative numbers ");
 			}
 			if(a<=9999999999L)
 			{
@@ -358,13 +388,13 @@ private boolean dobValidation()
 			}
 			else
 			{
-				errorMessageBox("It is not applicable");
+				errorMessageBox("UID can’t be more than 9999999999");
 				return false;
 			}
 		}
 		catch(Exception ex)
 		{
-			errorMessageBox("UID should only contain numbers");
+			errorMessageBox("UID accepts only numbers");
 			return false;
 		}
 	} 
