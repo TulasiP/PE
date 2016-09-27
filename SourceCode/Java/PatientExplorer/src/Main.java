@@ -46,7 +46,7 @@ public class Main extends Application
 		
 		Text nameLabel=new Text("Name");
 		nameText=new TextField();
-		
+	 	
 		Text ageLabel=new Text("Age");
 		ageText=new TextField();
 		
@@ -72,6 +72,7 @@ public class Main extends Application
 		aadhaarnoText=new TextField();
 		
 		Button saveButton=new Button("Save");
+
 		saveButton.setOnAction(e-> validateData());
 		
 		pane.getChildren().addAll(uidLabel, uidText, nameLabel, nameText,ageLabel,ageText,sexLabel ,sexText,dobLabel,dobText,heightLabel,heightText,weightLabel,weightText,birthdayLabel,birthdayText,addressLabel,addressText,aadhaarnoLabel,aadhaarnoText,saveButton);
@@ -94,23 +95,48 @@ public class Main extends Application
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 private void birthdayValidation() 
 {
-	System.out.println("enter date of birth to calculate day of the week");
-	Scanner reader = new Scanner(System.in);
-	String dateOfBirth = reader.nextLine();
-	System.out.println(dateOfBirth);
-	CalculateWeekday calc=new CalculateWeekday();
-	System.out.println(calc.getWeekday());
+		
+		System.out.println("enter date of birth to calculate day of the week");
+		Scanner reader = new Scanner(System.in);
+		String dateOfBirth = reader.nextLine();
+		if(dateOfBirth.isEmpty())
+		{
+			errorMessageBox("dateofbirth Data is not filled in required fields");
+			return;
+		}
+		System.out.println(dateOfBirth);
+		CalculateWeekday calc=new CalculateWeekday();
+		System.out.println(calc.getWeekday());
+
 		
 }
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 private boolean aadhaarnoValidation() 
 {
 	try
 	{
+		int aadhaarno=Integer.parseInt(aadhaarnoText.getText());
+		if(aadhaarnoText.getText()==null)
+		{
+			System.out.println(aadhaarno);
+		}
+	}
+	catch(Exception ex)
+	{
+		errorMessageBox(" aadhaarno Data is not filled in required fields");
+		return false;
+	}
 	
+	try
+	{
 		long aadhaarno=Long.parseLong(aadhaarnoText.getText());
 		System.out.println(aadhaarno);
+		if(aadhaarno==00)
+		{
+			errorMessageBox("aadhaarno Data is not filled in required fields");
+		}
 		return true;
 	}
 	catch(Exception ex)
@@ -128,6 +154,10 @@ private void addressValidation()
 	try
 	{
 		String address=(addressText.getText());
+		if(address.length()==0)
+		{
+			errorMessageBox(" address Data is not filled in required fields");
+		}
 		//String address1="gdfkjshk";
 //		if(address.compareTo(address1)>0)
 //		{
@@ -137,6 +167,7 @@ private void addressValidation()
 //		{
 //			errorMessageBox("Address doesn’t accept only numbers");
 //		}
+		
 		int asciinumber=0;
 		int ascii=address.charAt(0);
 		System.out.println(ascii);
@@ -166,9 +197,26 @@ private void addressValidation()
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 private boolean weightValidation() 
 {
+	try
+	{
+		int weight=Integer.parseInt(weightText.getText());
+		if(weightText.getText()==null)
+		{
+			System.out.println(weight);
+		}
+	}
+	catch(Exception ex)
+	{
+		errorMessageBox(" weight Data is not filled in required fields");
+		return false;
+	}
 	try  
 	{
 		long weight=Long.parseLong(weightText.getText());
+		if(weight==00)
+		{
+			errorMessageBox("weight Data is not filled in required fields");
+		}
 		if(weight<=0)
 		{
 			errorMessageBox("Weight doesn’t accept negative numbers");	
@@ -196,6 +244,11 @@ private boolean weightValidation()
 private boolean heightValidation() 
 {
 	String height=(heightText.getText());
+	if(height.isEmpty())
+	{
+		errorMessageBox("height Data is not filled in required fields");
+		return false;
+	}
 	System.out.println(height.charAt(0));
 		char c=height.charAt(3);
 		int number=57;
@@ -223,7 +276,7 @@ private boolean heightValidation()
 				System.out.println("inches value is not accepted");
 			}
 		}
-	
+		
 	try
 	{
 		char c3=height.charAt(0);
@@ -240,10 +293,9 @@ private boolean heightValidation()
 			System.out.println("Feets value is not accepted");
 			return false;
 		}
-		
 	}		
 		
-		int length=height.length(); 
+		int length=height.length();
 		if(length==5||length==6)
 		{
 			System.out.println("true");
@@ -259,8 +311,12 @@ private boolean heightValidation()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 private boolean dobValidation() 
 {
-	
 		String dob=(dobText.getText());
+		if(dob.isEmpty())
+		{
+			errorMessageBox("dob Data is not filled in required fields");
+			return false;
+		}
 		SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
 		String date=dob;
 		String[] datesplit= date.split("/");
@@ -300,6 +356,12 @@ private boolean dobValidation()
 	private void sexValidation() 
 	{
 			String sex=(sexText.getText());
+			if(sex.isEmpty())
+			{
+				errorMessageBox("sex Data is not filled in required fields");
+				return;
+			}
+			
 			String female="female";
 			String male="male"; 
 			String other="other";
@@ -311,14 +373,32 @@ private boolean dobValidation()
 			{
 				errorMessageBox("Sex can’t be given other than Male, Female and Other");
 			}
+
 	}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	private boolean ageValidation() 
 	{
+		try
+		{
+			int age=Integer.parseInt(ageText.getText());
+			if(ageText.getText()==null)
+			{
+				System.out.println(age);
+			}
+		}
+		catch(Exception ex)
+		{
+			errorMessageBox(" age Data is not filled in required fields");
+			return false;
+		}
 		try  
 		{
-			long a=Long.parseLong(ageText.getText());
-			if(a<=150)
+			long age=Long.parseLong(ageText.getText());
+			if(age==00)
+			{
+				errorMessageBox(" age Data is not filled in required fields");
+			}
+			if(age<=150)
 			{
 				System.out.println("given age is accepted");
 			}
@@ -326,7 +406,7 @@ private boolean dobValidation()
 			{
 				errorMessageBox("Age can’t exceed 150 years");
 			}
-			if(a<=0)
+			if(age<=0)
 			{
 				errorMessageBox("Age can’t accept negative numbers");;
 			}
@@ -341,9 +421,14 @@ private boolean dobValidation()
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	private void nameValidation()
 	{
+		
 		String name=(nameText.getText());
+		if(name.isEmpty())
+		{
+			errorMessageBox(" name Data is not filled in required fields");
+			return;
+		}
 		int asciinumber=0;
-
 		int ascii=name.charAt(0);
 		System.out.println(ascii);
 		for(int i=0;i<=name.length()-1;i++)
@@ -361,32 +446,49 @@ private boolean dobValidation()
 				break;
 			}
 		}
-
-			if(name.length()>50)
-			{
-				errorMessageBox("Length of the name can’t be more than 50 characters");
-			}
+//		if(name.length()==0)
+//		{
+//			errorMessageBox(" name Data is not filled in required fields");
+//			return;
+//		}
+		if(name.length()>50)
+		{
+			errorMessageBox("Length of the name can’t be more than 50 characters");
+		}
 	}
 	
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	private boolean uidValidation()//called method and method definition
 	{
+		try
+		{
+			int uid=Integer.parseInt(uidText.getText());
+			if(uidText.getText()==null)
+			{
+				System.out.println(uid);
+			}
+		}
+		catch(Exception ex)
+		{
+			errorMessageBox(" uid Data is not filled in required fields");
+			return false;
+		}
 		try  
 		{
-			long a=Long.parseLong(uidText.getText());
-			if(a==0)
+			long uid=Long.parseLong(uidText.getText());
+			if(uid==0)
 			{
 				errorMessageBox("UID can’t be zero ");
 			}
-			if(a<=0)
+			if(uid<=0)
 			{
 				errorMessageBox("UID doesn’t accept negative numbers ");
 			}
-			if(a<=9999999999L)
+			if(uid<=9999999999L)
 			{
 				return true;
 			}
-			else
+			else 
 			{
 				errorMessageBox("UID can’t be more than 9999999999");
 				return false;
