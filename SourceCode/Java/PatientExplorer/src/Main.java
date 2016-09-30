@@ -26,6 +26,7 @@ public class Main extends Application
 	TextField birthdayText;
 	TextField addressText;
 	TextField aadhaarnoText;
+	private CalculateWeekday calc;
 	@Override
 	public void start(Stage stage)
 	{
@@ -106,6 +107,9 @@ private void birthdayValidation()
 		}
 		System.out.println(dateOfBirth);
 		CalculateWeekday calc=new CalculateWeekday();
+		String day=calc.getWeekday();
+		birthdayText.setText(day);
+		System.out.println(day);
 		System.out.println(calc.getWeekday());
 
 		
@@ -213,10 +217,6 @@ private boolean weightValidation()
 	try  
 	{
 		long weight=Long.parseLong(weightText.getText());
-		if(weight==00)
-		{
-			errorMessageBox("weight Data is not filled in required fields");
-		}
 		if(weight<=0)
 		{
 			errorMessageBox("Weight doesn’t accept negative numbers");	
