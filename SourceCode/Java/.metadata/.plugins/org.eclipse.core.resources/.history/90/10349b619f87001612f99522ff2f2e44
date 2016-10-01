@@ -97,10 +97,9 @@ public class Main extends Application
 private void birthdayValidation() 
 {
 		
-//		System.out.println("enter date of birth to calculate day of the week");
-//		Scanner reader = new Scanner(System.in);
-		//String dateOfBirth = reader.nextLine();
-		String dateOfBirth = dobText.getText();
+		System.out.println("enter date of birth to calculate day of the week");
+		Scanner reader = new Scanner(System.in);
+		String dateOfBirth = reader.nextLine();
 		if(dateOfBirth.isEmpty())
 		{
 			errorMessageBox("dateofbirth Data is not filled in required fields");
@@ -115,6 +114,7 @@ private void birthdayValidation()
 
 		
 }
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 private boolean aadhaarnoValidation() 
