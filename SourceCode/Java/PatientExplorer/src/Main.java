@@ -91,17 +91,9 @@ public class Main extends Application
 		 System.out.println(calc.getWeekday());
 		 patientExplorer.addressValidation(addressText.getText());
 		 patientExplorer.aadhaarnoValidation(aadhaarnoText.getText());
+		 patientExplorer.saveData(uidText.getText());
 	}
-	
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//	private void errorMessageBox(String message) 
-//	{
-//		Alert alert=new Alert(AlertType.ERROR);
-//		alert.setTitle("Clinical Informatics");
-//		alert.setContentText(message);
-//		alert.showAndWait();
-//	}
 	public static void main(String args[])
 	{
 		launch(args);

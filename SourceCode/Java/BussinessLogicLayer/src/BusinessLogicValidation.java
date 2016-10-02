@@ -423,4 +423,10 @@ public class BusinessLogicValidation
 		alert.setContentText(message);
 		alert.showAndWait();
 	}
+
+	public void saveData(String uidValue)
+	{
+		DataAccessLogic data = new DataAccessLogic();
+		data.saveDataOfApplication(uidValue);
+	}
 }
