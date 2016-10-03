@@ -4,17 +4,20 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 
 public class DataAccessLogic 
+
 {
-	public void saveDataOfApplication(String uidValue)
+	public void saveDataOfApplication(String uidValue, String nameValue, String ageValue, String sexValue, String dobValue, String heightValue, String weightValue, String birthdayValue, String addressValue, String aadhaarnoValue)
 	{
 		String connectionString = "jdbc:sqlserver://localhost:1433;database=pcidb;user=sa;password=sa";
 		Connection conn=null;
 		try
 		{
 			conn=DriverManager.getConnection(connectionString);
-			String insertFormat="insert into patient(UUID) values(100)";
+			String insertFormat="insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo) values('%1$s','%2$s','%3$s','%4$s','%5$s','%6$s','%7$s','%8$s','%9$s','%10$s')";
+			String resultSet=String.format(insertFormat, uidValue , nameValue , ageValue , sexValue , dobValue.replace("/", "-"), heightValue.replace("'", "''") , weightValue , birthdayValue , addressValue , aadhaarnoValue);
 			Statement table = conn.createStatement();
-			table.execute(insertFormat);
+			System.out.println(resultSet);
+			table.execute(resultSet);
 			System.out.println("Values inserted successfully");
 			conn.close();
 		}
@@ -23,4 +26,10 @@ public class DataAccessLogic
 			System.out.println(ex.toString());
 		}
 	}
+
+	 {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

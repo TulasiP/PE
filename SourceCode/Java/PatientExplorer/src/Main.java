@@ -83,15 +83,17 @@ public class Main extends Application
 		 patientExplorer.dobValidation(dobText.getText());
 		 patientExplorer.heightValidation(heightText.getText());
 		 patientExplorer.weightValidation(weightText.getText());
-		 patientExplorer.birthdayValidation(dobText.getText());
+		 //patientExplorer.birthdayValidation(dobText.getText());
 		 CalculateWeekday calc=new CalculateWeekday();
 		 String day=calc.getWeekday();
 		 birthdayText.setText(day);
 		 System.out.println(day);
-		 System.out.println(calc.getWeekday());
+		 //System.out.println(calc.getWeekday());
 		 patientExplorer.addressValidation(addressText.getText());
 		 patientExplorer.aadhaarnoValidation(aadhaarnoText.getText());
-		 patientExplorer.saveData(uidText.getText());
+///////////////////////////////////////////////////////////////save data method /////////////////////////////////////////////////////////////////////////////////////////////////////////		
+		 patientExplorer.saveData(uidText.getText(), nameText.getText(),ageText.getText(),sexText.getText(),dobText.getText(),heightText.getText(), weightText.getText(),birthdayText.getText(),addressText.getText(), aadhaarnoText.getText());
+		
 	}
 
 	public static void main(String args[])

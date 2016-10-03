@@ -1,18 +1,16 @@
 package calculateWeekday;
 
-import java.util.Scanner;
-
 public class CalculateWeekday 
 {
-	public String getWeekday()
+	public String getWeekday(String dobValue)
 	{
 			
-		    //String dateOfBirth = "28-06-1981";
-		    String str = dateOfBirth;
-	        String split[] = str.split("/");
-			int date=Integer.parseInt(split[0]);
+			String dateOfBirth = dobValue;
+			String str = dateOfBirth;
+	        String split[] = str.split("-");
+			int year=Integer.parseInt(split[0]);
 			int month=Integer.parseInt(split[1]);
-			int year=Integer.parseInt(split[2]);
+			int date=Integer.parseInt(split[2]);
 			int daysInYear=getDaysInYear(year);
 			int daysInMonth=getDaysInMonth(year,month);
 			String weekDay=getDayOfTheWeek(daysInYear, daysInMonth, date);

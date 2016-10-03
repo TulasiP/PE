@@ -138,9 +138,9 @@ public class BusinessLogicValidation
 				return;
 			}
 			
-			String female="female";
-			String male="male"; 
-			String other="other";
+			String female="Female";
+			String male="Male"; 
+			String other="Other";
 			if(sex.compareTo(female)==0||sex.compareTo(male)==0||sex.compareTo(other)==0)
 			{
 				System.out.println("It should accepts");
@@ -162,10 +162,10 @@ public class BusinessLogicValidation
 				errorMessageBox("dob Data is not filled in required fields");
 				return false;
 			}
-			SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat fmt = new SimpleDateFormat("yyyy-mm-dd");
 			String date=dob;
-			String[] datesplit= date.split("/");
-			int year=Integer.parseInt(datesplit[2]);
+			String[] datesplit= date.split("-");
+			int year=Integer.parseInt(datesplit[0]);
 			if(year>=1866)
 			{
 				System.out.println("It is valid");
@@ -175,15 +175,15 @@ public class BusinessLogicValidation
 				errorMessageBox("It is not valid");
 				return false;
 			}
-			String todaydate="17-09-2016";
-			if(dob.compareTo(todaydate)<0)
-			{
-				return true;
-			}
-			else
-			{
-				System.out.println("greater than today date is not valid");
-			}
+//			String todaydate="17-09-2016";
+//			if(dob.compareTo(todaydate)<0)
+//			{
+//				return true;
+//			}
+//			else
+//			{
+//				System.out.println("greater than today date is not valid");
+//			}
 			try
 			{
 				Date d= fmt.parse(dob);
@@ -310,17 +310,17 @@ public class BusinessLogicValidation
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 
-	public void birthdayValidation(String dateOfBirthValue ) 
-	{
-			
+//	public void birthdayValidation(String dateOfBirthValue ) 
+//	{
 //			
-			String dateOfBirth = dateOfBirthValue;
-			if(dateOfBirth.isEmpty())
-			{
-				errorMessageBox("dateofbirth Data is not filled in required fields");
-				return;
-			}
-			System.out.println(dateOfBirth);
+//			
+//			String dateOfBirth = dateOfBirthValue;
+//			if(dateOfBirth.isEmpty())
+//			{
+//				errorMessageBox("dateofbirth Data is not filled in required fields");
+//				return;
+//			}
+//			System.out.println(dateOfBirth);
 //			CalculateWeekday calc=new CalculateWeekday();
 //			String day=calc.getWeekday();
 //			birthdayText.setText(day);
@@ -328,7 +328,7 @@ public class BusinessLogicValidation
 //			System.out.println(calc.getWeekday());
 
 			
-	}
+	//}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
@@ -424,9 +424,10 @@ public class BusinessLogicValidation
 		alert.showAndWait();
 	}
 
-	public void saveData(String uidValue)
+	public void saveData(java.lang.String uidValue , String nameValue , String ageValue , String sexValue , String dobValue , String heightValue , String weightValue , String birthdayValue , String addressValue , String aadhaarnoValue )
 	{
 		DataAccessLogic data = new DataAccessLogic();
-		data.saveDataOfApplication(uidValue);
+		data.saveDataOfApplication(uidValue, nameValue, ageValue, sexValue, dobValue, heightValue, weightValue, birthdayValue, addressValue, aadhaarnoValue);	
 	}
+
 }
