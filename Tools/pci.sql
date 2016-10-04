@@ -28,8 +28,9 @@ GO
 use [pcidb]
 GO
 
-Create table patient(UUID nvarchar(50), Name nvarchar(50), DOB datetime, Age int, Sex nvarchar(50), Height nvarchar(50), Wheight nvarchar(50), BirthDay nvarchar(50), Addres nvarchar(200) , AadhaarNo nvarchar(50))
+Create table patient(UUID nvarchar(50) PRIMARY KEY, Name nvarchar(50), Age int , Sex nvarchar(50),  DOB datetime, Height nvarchar(50) , Wheight nvarchar(50) , BirthDay nvarchar(50), Addres nvarchar(200), AadhaarNo nvarchar(50)) ;
 GO
+
 
 --insert into patient(UUID, Name, DOB, Age, Sex, Height, Wheight, BirthDay, Addres, AadhaarNo) values('1','fsdfs','1/1/1981 12:00:00 AM',12,'Male','5''5"','34','Thursday',',dmfsksf','2323');
 --delete from patient

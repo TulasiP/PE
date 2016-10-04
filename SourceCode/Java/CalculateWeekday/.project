@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>Java</name>
+			<type>2</type>
+			<location>C:/Users/Rameshbabu-P/Documents/GitHub/bin/Java</location>
+		</link>
+	</linkedResources>
 </projectDescription>

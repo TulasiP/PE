@@ -156,7 +156,7 @@ public class BusinessLogicValidation
 	
 	public boolean dobValidation(String dobValue) 
 	{
-			String dob=dobValue;
+			String dob=(dobValue);
 			if(dob.isEmpty())
 			{
 				errorMessageBox("dob Data is not filled in required fields");
