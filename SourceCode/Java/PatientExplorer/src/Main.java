@@ -27,12 +27,14 @@ public class Main extends Application
 		
 		createControls(pane);
 		
+
 		stage.setScene(new Scene(pane, 640, 480));
 		stage.setTitle("Clinical Informatics");
 		stage.setResizable(false);
 		stage.show();
+
+
 	}
-	
 	public void createControls(VBox pane) 
 	{
 		Text uidLabel=new Text("UID");
@@ -66,10 +68,36 @@ public class Main extends Application
 		aadhaarnoText=new TextField();
 		
 		Button saveButton=new Button("Save");
-
 		saveButton.setOnAction(e-> validateData());
 		
-		pane.getChildren().addAll(uidLabel, uidText, nameLabel, nameText,ageLabel,ageText,sexLabel ,sexText,dobLabel,dobText,heightLabel,heightText,weightLabel,weightText,birthdayLabel,birthdayText,addressLabel,addressText,aadhaarnoLabel,aadhaarnoText,saveButton);
+
+		Button LoadButton=new Button("Load");
+		LoadButton.setOnAction(e-> loadData());
+		
+		pane.getChildren().addAll(uidLabel, uidText, nameLabel, nameText,ageLabel,ageText,sexLabel ,sexText,dobLabel,dobText,heightLabel,heightText,weightLabel,weightText,birthdayLabel,birthdayText,addressLabel,addressText,aadhaarnoLabel,aadhaarnoText,saveButton,LoadButton);
+	}
+	
+	public void loadData() 
+	{
+		BusinessLogicValidation patientExplorer = new BusinessLogicValidation();
+		String name=patientExplorer.loadData(uidText.getText());
+		nameText.setText(name);
+		String age=patientExplorer.loadData1(uidText.getText());
+		ageText.setText(age);
+		String sex=patientExplorer.loadData2(uidText.getText());
+		sexText.setText(sex);
+		String dob=patientExplorer.loadData3(uidText.getText());
+		dobText.setText(dob);
+		String height=patientExplorer.loadData4(uidText.getText());
+		heightText.setText(height);
+		String weight=patientExplorer.loadData5(uidText.getText());
+		weightText.setText(weight);
+		String birthday=patientExplorer.loadData6(uidText.getText());
+		birthdayText.setText(birthday);
+		String address=patientExplorer.loadData7(uidText.getText());
+		addressText.setText(address);
+		String aadhaarno=patientExplorer.loadData8(uidText.getText());
+		aadhaarnoText.setText(aadhaarno);
 	}
 	
 	public void validateData()
@@ -92,9 +120,9 @@ public class Main extends Application
 		 patientExplorer.aadhaarnoValidation(aadhaarnoText.getText());
 ///////////////////////////////////////////////////////////////save data method /////////////////////////////////////////////////////////////////////////////////////////////////////////		
 		 patientExplorer.saveData(uidText.getText(), nameText.getText(),ageText.getText(),sexText.getText(),dobText.getText(),heightText.getText(), weightText.getText(),birthdayText.getText(),addressText.getText(), aadhaarnoText.getText());
-		
+		 
 	}
-
+	
 	public static void main(String args[])
 	{
 		launch(args);

@@ -196,7 +196,6 @@ public class DataAccessLogic
 		return uidValue;
 		
 	}
-	
 	public String loadData7(String uidValue)
 	{
 		String connectionString = "jdbc:sqlserver://localhost:1433;database=pcidb;user=sa;password=sa";
@@ -219,7 +218,6 @@ public class DataAccessLogic
 		return uidValue;
 		
 	}
-	
 	public String loadData8(String uidValue)
 	{
 		String connectionString = "jdbc:sqlserver://localhost:1433;database=pcidb;user=sa;password=sa";

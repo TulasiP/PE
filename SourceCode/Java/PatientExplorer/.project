@@ -3,6 +3,9 @@
 	<name>PatientExplorer</name>
 	<comment></comment>
 	<projects>
+		<project>BussinessLogicLayer</project>
+		<project>CalculateWeekday</project>
+		<project>DataAccessLayer</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
