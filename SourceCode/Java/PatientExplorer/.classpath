@@ -5,5 +5,6 @@
 	<classpathentry kind="src" path="/BussinessLogicLayer"/>
 	<classpathentry kind="lib" path="C:/Users/Rameshbabu-P/Documents/GitHub/bin/Java/calculateWeekday"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/CalculateWeekday"/>
+	<classpathentry kind="src" path="/Common"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

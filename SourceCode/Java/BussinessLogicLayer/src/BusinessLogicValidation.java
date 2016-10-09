@@ -1,6 +1,7 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import calculateWeekday.CalculateWeekday;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
@@ -415,66 +416,34 @@ public class BusinessLogicValidation
 		alert.showAndWait();
 	}
 
-	public void saveData(String uidValue , String nameValue , String ageValue , String sexValue , String dobValue , String heightValue , String weightValue , String birthdayValue , String addressValue , String aadhaarnoValue )
+	public void saveData(PatientInformation pi)
 	{
 		DataAccessLogic data = new DataAccessLogic();
-		data.saveDataOfApplication(uidValue, nameValue, ageValue, sexValue, dobValue, heightValue, weightValue, birthdayValue, addressValue, aadhaarnoValue);	
+		data.saveDataOfApplication(pi);	
 	}
 
-	public String loadData(String uidValue)
+	public PatientInformation loadData(PatientInformation pi)
 	{
 		DataAccessLogic data1 = new DataAccessLogic();
-		String name=data1.loadData(uidValue);
-		return name;
+		PatientInformation blpi=data1.loadData(pi);
+		return blpi;
 	}
-	public String loadData1(String uidValue)
+	public void ValidateData(PatientInformation pi) 
 	{
-		DataAccessLogic data1 = new DataAccessLogic();
-		String age=data1.loadData1(uidValue);
-		return age;
-	}
-	public String loadData2(String uidValue)
-	{
-		DataAccessLogic data1 = new DataAccessLogic();
-		String sex=data1.loadData2(uidValue);
-		return sex;
-	}
-	public String loadData3(String uidValue)
-	{
-		DataAccessLogic data1 = new DataAccessLogic();
-		String dob=data1.loadData3(uidValue);
-		return dob;
-	}
-	public String loadData4(String uidValue)
-	{
-		DataAccessLogic data1 = new DataAccessLogic();
-		String height=data1.loadData4(uidValue);
-		return height;
-	}
-	public String loadData5(String uidValue)
-	{
-		DataAccessLogic data1 = new DataAccessLogic();
-		String weight=data1.loadData5(uidValue);
-		return weight;
-	}
-
-	public String loadData6(String uidValue) 
-	{
-		DataAccessLogic data1 = new DataAccessLogic();
-		String birthday=data1.loadData6(uidValue);
-		return birthday;
-	}
-	public String loadData7(String uidValue) 
-	{
-		DataAccessLogic data1 = new DataAccessLogic();
-		String address=data1.loadData7(uidValue);
-		return address;
-	}
-	public String loadData8(String uidValue) 
-	{
-		DataAccessLogic data1 = new DataAccessLogic();
-		String aadhaarno=data1.loadData8(uidValue);
-		return aadhaarno;
+		uidValidation(pi.uuid);
+		 nameValidation(pi.name);
+		 ageValidation(pi.age);
+		 sexValidation(pi.sex);
+		 dobValidation(pi.dob);
+		 heightValidation(pi.height);
+		 weightValidation(pi.wheight);
+		 addressValidation(pi.addres);
+		 aadhaarnoValidation(pi.aadhaarno);
+		 CalculateWeekday calc=new CalculateWeekday();
+		 String day=calc.getWeekday(pi.dob);
+		 pi.birthday=day;
+		
+		
 	}
 	
 

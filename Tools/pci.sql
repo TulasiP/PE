@@ -34,3 +34,7 @@ GO
 
 --insert into patient(UUID, Name, DOB, Age, Sex, Height, Wheight, BirthDay, Addres, AadhaarNo) values('1','fsdfs','1/1/1981 12:00:00 AM',12,'Male','5''5"','34','Thursday',',dmfsksf','2323');
 --delete from patient
+
+select * from patient;
+select name from patient where UUID=1;
+select wheight from patient where UUID=1;

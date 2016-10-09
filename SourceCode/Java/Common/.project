@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>PatientExplorer</name>
+	<name>Common</name>
 	<comment></comment>
 	<projects>
 		<project>BussinessLogicLayer</project>
-		<project>CalculateWeekday</project>
-		<project>Common</project>
 		<project>DataAccessLayer</project>
+		<project>PatientExplorer</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -18,11 +17,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>calculateWeekday</name>
-			<type>2</type>
-			<location>C:/Users/Rameshbabu-P/Documents/GitHub/bin/Java/calculateWeekday</location>
-		</link>
-	</linkedResources>
 </projectDescription>

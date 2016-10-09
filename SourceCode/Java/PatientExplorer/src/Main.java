@@ -79,47 +79,41 @@ public class Main extends Application
 	
 	public void loadData() 
 	{
-		BusinessLogicValidation patientExplorer = new BusinessLogicValidation();
-		String name=patientExplorer.loadData(uidText.getText());
-		nameText.setText(name);
-		String age=patientExplorer.loadData1(uidText.getText());
-		ageText.setText(age);
-		String sex=patientExplorer.loadData2(uidText.getText());
-		sexText.setText(sex);
-		String dob=patientExplorer.loadData3(uidText.getText());
-		dobText.setText(dob);
-		String height=patientExplorer.loadData4(uidText.getText());
-		heightText.setText(height);
-		String weight=patientExplorer.loadData5(uidText.getText());
-		weightText.setText(weight);
-		String birthday=patientExplorer.loadData6(uidText.getText());
-		birthdayText.setText(birthday);
-		String address=patientExplorer.loadData7(uidText.getText());
-		addressText.setText(address);
-		String aadhaarno=patientExplorer.loadData8(uidText.getText());
-		aadhaarnoText.setText(aadhaarno);
+		BusinessLogicValidation bussinessLogic = new BusinessLogicValidation();
+		PatientInformation pi=new PatientInformation();
+		pi.uuid=uidText.getText();
+		PatientInformation plpi=bussinessLogic.loadData(pi);
+		nameText.setText(plpi.name);
+		ageText.setText(plpi.age);
+		sexText.setText(plpi.sex);
+		dobText.setText(plpi.dob);
+		heightText.setText(plpi.height);
+		weightText.setText(plpi.wheight);
+		birthdayText.setText(plpi.birthday);
+		addressText.setText(plpi.addres);
+		aadhaarnoText.setText(plpi.aadhaarno);	
 	}
 	
 	public void validateData()
 	{
-		 BusinessLogicValidation patientExplorer = new BusinessLogicValidation();
-		 patientExplorer.uidValidation(uidText.getText());
-		 patientExplorer.nameValidation(nameText.getText());
-		 patientExplorer.ageValidation(ageText.getText());
-		 patientExplorer.sexValidation(sexText.getText());
-		 patientExplorer.dobValidation(dobText.getText());
-		 patientExplorer.heightValidation(heightText.getText());
-		 patientExplorer.weightValidation(weightText.getText());
-		 //patientExplorer.birthdayValidation(dobText.getText());
-		 CalculateWeekday calc=new CalculateWeekday();
-		 String day=calc.getWeekday(dobText.getText());
-		 birthdayText.setText(day);
-		 System.out.println(day);
-		 //System.out.println(calc.getWeekday());
-		 patientExplorer.addressValidation(addressText.getText());
-		 patientExplorer.aadhaarnoValidation(aadhaarnoText.getText());
+		PatientInformation pi=new PatientInformation();
+		pi.aadhaarno=aadhaarnoText.getText();
+		pi.addres=addressText.getText();
+		pi.age=ageText.getText();
+		pi.birthday=birthdayText.getText();
+		pi.dob=dobText.getText();
+		pi.height=heightText.getText();
+		pi.name=nameText.getText();
+		pi.sex=sexText.getText();
+		pi.uuid=uidText.getText();
+		pi.wheight=weightText.getText();
+		
+		 BusinessLogicValidation bussinessLogic = new BusinessLogicValidation();
+		 bussinessLogic.ValidateData(pi);
+		 
 ///////////////////////////////////////////////////////////////save data method /////////////////////////////////////////////////////////////////////////////////////////////////////////		
-		 patientExplorer.saveData(uidText.getText(), nameText.getText(),ageText.getText(),sexText.getText(),dobText.getText(),heightText.getText(), weightText.getText(),birthdayText.getText(),addressText.getText(), aadhaarnoText.getText());
+		 bussinessLogic.saveData(pi);
+		
 		 
 	}
 	
