@@ -10,6 +10,7 @@ public class BusinessLogicValidation
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public boolean uidValidation(String uidValue)//called method and method definition
 	{
+		Logger.LogMessage("BusinessLogicValidation.uidValidation started");
 		try
 		{
 			int uid=Integer.parseInt(uidValue);
@@ -23,6 +24,7 @@ public class BusinessLogicValidation
 			errorMessageBox(" uid Data is not filled in required fields");
 			return false;
 		}
+		Logger.LogMessage("BusinessLogicValidation.uidValidation ended");
 		try  
 		{
 			long uid=Long.parseLong(uidValue);
@@ -49,12 +51,13 @@ public class BusinessLogicValidation
 			errorMessageBox("UID accepts only numbers");
 			return false;
 		}
+		
 	} 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public void nameValidation(String nameValue)
 	{
-		
+		Logger.LogMessage("BusinessLogicValidation.nameValidation started");
 		String name=(nameValue);
 		if(name.isEmpty())
 		{
@@ -81,12 +84,14 @@ public class BusinessLogicValidation
 		{
 			errorMessageBox("Length of the name can’t be more than 50 characters");
 		}
+		Logger.LogMessage("BusinessLogicValidation.uidValidation ended");
 	}
 	
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public boolean ageValidation(String ageValue) 
 	{
+		Logger.LogMessage("BusinessLogicValidation.ageValidation started");
 		try
 		{
 			int age=Integer.parseInt(ageValue);
@@ -100,6 +105,7 @@ public class BusinessLogicValidation
 			errorMessageBox(" age Data is not filled in required fields");
 			return false;
 		}
+		Logger.LogMessage("BusinessLogicValidation.uidValidation ended");
 		try  
 		{
 			long age=Long.parseLong(ageValue);
@@ -132,6 +138,7 @@ public class BusinessLogicValidation
 	
 	public void sexValidation(String sexValue) 
 	{
+			Logger.LogMessage("BusinessLogicValidation.sexValidation started");
 			String sex=(sexValue);
 			if(sex.isEmpty())
 			{
@@ -150,6 +157,7 @@ public class BusinessLogicValidation
 			{
 				errorMessageBox("Sex can’t be given other than Male, Female and Other");
 			}
+			Logger.LogMessage("BusinessLogicValidation.sexValidation ended");
 
 	}
 	
@@ -157,6 +165,7 @@ public class BusinessLogicValidation
 	
 	public boolean dobValidation(String dobValue) 
 	{
+		Logger.LogMessage("BusinessLogicValidation.dobValidation started");
 			String dob=dobValue;
 			if(dob.isEmpty())
 			{
@@ -176,6 +185,7 @@ public class BusinessLogicValidation
 				errorMessageBox("It is not valid");
 				return false;
 			}
+			Logger.LogMessage("BusinessLogicValidation.uidValidation ended");
 //			String todaydate="17-09-2016";
 //			if(dob.compareTo(todaydate)<0)
 //			{
@@ -195,13 +205,14 @@ public class BusinessLogicValidation
 			{
 				errorMessageBox("given date is not in correct format");
 				return false;
-			}			
+			}
 	}
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 	public boolean heightValidation(String heightValue) 
 	{
+		Logger.LogMessage("BusinessLogicValidation.heightValidation started");
 		String height=(heightValue);
 		if(height.isEmpty())
 		{
@@ -235,6 +246,7 @@ public class BusinessLogicValidation
 					System.out.println("inches value is not accepted");
 				}
 			}
+			Logger.LogMessage("BusinessLogicValidation.uidValidation ended");
 			
 		try
 		{
@@ -271,6 +283,7 @@ public class BusinessLogicValidation
 
 	public boolean weightValidation(String weightValue) 
 	{
+		Logger.LogMessage("BusinessLogicValidation.uidValidation started");
 		try
 		{
 			int weight=Integer.parseInt(weightValue);
@@ -284,6 +297,9 @@ public class BusinessLogicValidation
 			errorMessageBox(" weight Data is not filled in required fields");
 			return false;
 		}
+		Logger.LogMessage("BusinessLogicValidation.uidValidation ended");
+		
+		Logger.LogMessage("BusinessLogicValidation.uidValidation started");
 		try  
 		{
 			long weight=Long.parseLong(weightValue);
@@ -307,35 +323,14 @@ public class BusinessLogicValidation
 			errorMessageBox("Weight accepts only numbers");
 			return false;
 		}
+
 	}		
-
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-
-//	public void birthdayValidation(String dateOfBirthValue ) 
-//	{
-//			
-//			
-//			String dateOfBirth = dateOfBirthValue;
-//			if(dateOfBirth.isEmpty())
-//			{
-//				errorMessageBox("dateofbirth Data is not filled in required fields");
-//				return;
-//			}
-//			System.out.println(dateOfBirth);
-//			CalculateWeekday calc=new CalculateWeekday();
-//			String day=calc.getWeekday();
-//			birthdayText.setText(day);
-//			System.out.println(day);
-//			System.out.println(calc.getWeekday());
-
-			
-	//}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public void addressValidation(String addressValue) 
 	{
-
+		Logger.LogMessage("BusinessLogicValidation.addressValidation started");
 		try
 		{
 			String address=(addressValue);
@@ -367,6 +362,7 @@ public class BusinessLogicValidation
 		{
 			errorMessageBox("Address doesn’t accept only numbers");
 		}
+		Logger.LogMessage("BusinessLogicValidation.uidValidation ended");
 		
 	}
 
@@ -374,6 +370,7 @@ public class BusinessLogicValidation
 
 	public boolean aadhaarnoValidation(String aadhaarnoValue) 
 	{
+		Logger.LogMessage("BusinessLogicValidation.aadhaarnoValidation started");
 		try
 		{
 			int aadhaarno=Integer.parseInt(aadhaarnoValue);
@@ -387,7 +384,7 @@ public class BusinessLogicValidation
 			errorMessageBox(" aadhaarno Data is not filled in required fields");
 			return false;
 		}
-		
+		Logger.LogMessage("BusinessLogicValidation.uidValidation ended");
 		try
 		{
 			long aadhaarno=Long.parseLong(aadhaarnoValue);
@@ -418,18 +415,23 @@ public class BusinessLogicValidation
 
 	public void saveData(PatientInformation pi)
 	{
+		Logger.LogMessage("BusinessLogicValidation.saveData started");
 		DataAccessLogic data = new DataAccessLogic();
 		data.saveDataOfApplication(pi);	
+		Logger.LogMessage("BusinessLogicValidation.saveData started");
 	}
 
 	public PatientInformation loadData(PatientInformation pi)
 	{
+		Logger.LogMessage("BusinessLogicValidation.loadData started");
 		DataAccessLogic data1 = new DataAccessLogic();
 		PatientInformation blpi=data1.loadData(pi);
 		return blpi;
+		
 	}
 	public void ValidateData(PatientInformation pi) 
 	{
+		Logger.LogMessage("BusinessLogicValidation.ValidateData started");
 		uidValidation(pi.uuid);
 		 nameValidation(pi.name);
 		 ageValidation(pi.age);
@@ -442,7 +444,7 @@ public class BusinessLogicValidation
 		 CalculateWeekday calc=new CalculateWeekday();
 		 String day=calc.getWeekday(pi.dob);
 		 pi.birthday=day;
-		
+		 Logger.LogMessage("BusinessLogicValidation.ValidateData ended");
 		
 	}
 	

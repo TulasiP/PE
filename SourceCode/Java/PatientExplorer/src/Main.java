@@ -75,10 +75,12 @@ public class Main extends Application
 		LoadButton.setOnAction(e-> loadData());
 		
 		pane.getChildren().addAll(uidLabel, uidText, nameLabel, nameText,ageLabel,ageText,sexLabel ,sexText,dobLabel,dobText,heightLabel,heightText,weightLabel,weightText,birthdayLabel,birthdayText,addressLabel,addressText,aadhaarnoLabel,aadhaarnoText,saveButton,LoadButton);
+
 	}
 	
 	public void loadData() 
 	{
+		Logger.LogMessage("Main.loadData started");
 		BusinessLogicValidation bussinessLogic = new BusinessLogicValidation();
 		PatientInformation pi=new PatientInformation();
 		pi.uuid=uidText.getText();
@@ -91,11 +93,13 @@ public class Main extends Application
 		weightText.setText(plpi.wheight);
 		birthdayText.setText(plpi.birthday);
 		addressText.setText(plpi.addres);
-		aadhaarnoText.setText(plpi.aadhaarno);	
+		aadhaarnoText.setText(plpi.aadhaarno);
+		Logger.LogMessage("Main.loadData ended");
 	}
 	
 	public void validateData()
 	{
+		Logger.LogMessage("Main.validateData started ");
 		PatientInformation pi=new PatientInformation();
 		pi.aadhaarno=aadhaarnoText.getText();
 		pi.addres=addressText.getText();
@@ -107,19 +111,19 @@ public class Main extends Application
 		pi.sex=sexText.getText();
 		pi.uuid=uidText.getText();
 		pi.wheight=weightText.getText();
-		
-		 BusinessLogicValidation bussinessLogic = new BusinessLogicValidation();
-		 bussinessLogic.ValidateData(pi);
+		BusinessLogicValidation bussinessLogic = new BusinessLogicValidation();
+		bussinessLogic.ValidateData(pi);
 		 
 ///////////////////////////////////////////////////////////////save data method /////////////////////////////////////////////////////////////////////////////////////////////////////////		
 		 bussinessLogic.saveData(pi);
-		
+		 Logger.LogMessage("Main.validateData end");
 		 
 	}
 	
 	public static void main(String args[])
 	{
+		Logger.LogMessage("Main.main is launched started");
 		launch(args);
-		
+		Logger.LogMessage("Main.main is ended");
 	}
 }
