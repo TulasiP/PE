@@ -7,10 +7,10 @@ public class CalculateWeekday
 			
 			String dateOfBirth = dobValue;
 			String str = dateOfBirth;
-	        String split[] = str.split("-");
-			int year=Integer.parseInt(split[0]);
+	        String split[] = str.split("/");
+			int date=Integer.parseInt(split[0]);
 			int month=Integer.parseInt(split[1]);
-			int date=Integer.parseInt(split[2]);
+			int year=Integer.parseInt(split[2]);
 			int daysInYear=getDaysInYear(year);
 			int daysInMonth=getDaysInMonth(year,month);
 			String weekDay=getDayOfTheWeek(daysInYear, daysInMonth, date);

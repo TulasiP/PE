@@ -93,7 +93,7 @@ public class Main extends Application
 		nameText.setText(plpi.name);
 		ageText.setText(plpi.age);
 		sexText.setText(plpi.sex);
-		dobText.setText(plpi.dob.substring(0, 11));
+		dobText.setText(plpi.dob.substring(0,11));
 		heightText.setText(plpi.height);
 		weightText.setText(plpi.wheight);
 		birthdayText.setText(plpi.birthday);

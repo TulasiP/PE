@@ -177,10 +177,6 @@ public class BusinessLogicValidation
 			SimpleDateFormat fmt = new SimpleDateFormat("dd/mm/yyyy");
 			String date=dob;
 			String[] datesplit= date.split("/");
-			int date1=Integer.parseInt(datesplit[0]);
-			int month=Integer.parseInt(datesplit[1]);
-			System.out.println(date1);
-			System.out.println(month);
 			int year=Integer.parseInt(datesplit[2]);
 			if(year>=1866)
 			{
@@ -446,8 +442,6 @@ public class BusinessLogicValidation
 	public void saveData(PatientInformation pi)
 	{
 		Logger.LogMessage("BusinessLogicValidation.saveData started");
-		// Convert dob value from dd/mm/yyyy to yyyy-mm-dd
-		pi.dob=ConvertDate(pi.dob);
 		DataAccessLogic data = new DataAccessLogic();
 		data.saveDataOfApplication(pi);	
 		Logger.LogMessage("BusinessLogicValidation.saveData started");
@@ -481,23 +475,7 @@ public class BusinessLogicValidation
 		
 	}
 	
-	private String ConvertDate(String date) 
-	{
-		String format = "dd/mm/yyyy";
-		SimpleDateFormat sdf = new SimpleDateFormat(format);
-		try
-		{
-			Date dt = sdf.parse(date);
-			SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-mm-dd");
-			return sdf1.format(dt);
-		}
-		catch(Exception ex)
-		{
-			Logger.LogMessage(ex.toString());	
-		}
-		
-		return null;
-	}
+
 	
 
 }

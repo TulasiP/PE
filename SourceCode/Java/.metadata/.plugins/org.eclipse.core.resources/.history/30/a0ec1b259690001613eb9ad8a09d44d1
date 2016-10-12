@@ -68,7 +68,6 @@ public class DataAccessLogic
 				pi.birthday=rs.getString(7);
 				pi.addres=rs.getString(8);
 				pi.aadhaarno=rs.getString(9);
-				
 				pi.PhoneNo=rs.getString(10);
 				return pi;
 			}

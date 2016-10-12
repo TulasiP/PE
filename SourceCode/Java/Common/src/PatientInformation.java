@@ -12,6 +12,7 @@ public class PatientInformation
 		String birthday;
 		String addres;
 		String aadhaarno;
+		String PhoneNo;
 
 }
 

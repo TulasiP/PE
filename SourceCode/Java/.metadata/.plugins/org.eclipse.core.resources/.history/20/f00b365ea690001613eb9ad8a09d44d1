@@ -446,8 +446,9 @@ public class BusinessLogicValidation
 	public void saveData(PatientInformation pi)
 	{
 		Logger.LogMessage("BusinessLogicValidation.saveData started");
-		// Convert dob value from dd/mm/yyyy to yyyy-mm-dd
-		pi.dob=ConvertDate(pi.dob);
+		// Convert dob value from dd-mm-yyyy to yyyy-mm-dd
+		//pi.dob=pi.dob.convertto yyyy-mm-dd 
+		//pi.dob="2000-01-25";
 		DataAccessLogic data = new DataAccessLogic();
 		data.saveDataOfApplication(pi);	
 		Logger.LogMessage("BusinessLogicValidation.saveData started");
@@ -481,22 +482,26 @@ public class BusinessLogicValidation
 		
 	}
 	
-	private String ConvertDate(String date) 
+	private static void main(String[] args) throws ParseException 
 	{
+		String d="25/01/2000";
+		String s = "";
 		String format = "dd/mm/yyyy";
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
 		try
 		{
-			Date dt = sdf.parse(date);
+			Date dt = sdf.parse(d);
 			SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-mm-dd");
-			return sdf1.format(dt);
+			s = sdf1.format(dt);
+
+			System.out.println(s);
 		}
-		catch(Exception ex)
+		catch(Exception e)
 		{
-			Logger.LogMessage(ex.toString());	
+			
 		}
 		
-		return null;
+		
 	}
 	
 

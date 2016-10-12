@@ -446,7 +446,7 @@ public class BusinessLogicValidation
 	public void saveData(PatientInformation pi)
 	{
 		Logger.LogMessage("BusinessLogicValidation.saveData started");
-		// Convert dob value from dd/mm/yyyy to yyyy-mm-dd
+		// Convert dob value from dd-mm-yyyy to yyyy-mm-dd
 		pi.dob=ConvertDate(pi.dob);
 		DataAccessLogic data = new DataAccessLogic();
 		data.saveDataOfApplication(pi);	
