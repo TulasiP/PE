@@ -12,8 +12,8 @@ public class DataAccessLogic
 		{
 			conn=DriverManager.getConnection(connectionString);
 			Logger.LogMessage("DataAccessLogic.saveDataOfApplication is started");
-			String insertFormat="insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo) values('%1$s','%2$s','%3$s','%4$s','%5$s','%6$s','%7$s','%8$s','%9$s','%10$s','%11$s')";
-			String resultSet=String.format(insertFormat, pi.uuid , pi.name , pi.age , pi.sex , pi.dob.replace("/", "-"), pi.height.replace("'", "''") , pi.wheight , pi.birthday , pi.addres , pi.aadhaarno , pi.PhoneNo);
+			String insertFormat="insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo , StudyType) values('%1$s','%2$s','%3$s','%4$s','%5$s','%6$s','%7$s','%8$s','%9$s','%10$s','%11$s','%12$s')";
+			String resultSet=String.format(insertFormat, pi.uuid , pi.name , pi.age , pi.sex , pi.dob.replace("/", "-"), pi.height.replace("'", "''") , pi.wheight , pi.birthday , pi.addres , pi.aadhaarno , pi.PhoneNo , pi.studytype);
 			Logger.LogMessage("insert statement is: " + resultSet);
 			Statement table = conn.createStatement();
 		
@@ -25,8 +25,8 @@ public class DataAccessLogic
 			// Retrieve from ResultSet and display column data
 		     while (rs.next()) 
 		     {
-		    	Logger.LogMessage("DataAccessLogic.saveDataOfApplication is started rs.getInt(1) +  rs.getString(2) +  rs.getInt(3) + rs.getString(4) + rs.getString(5) + rs.getString(6) +  rs.getString(7) +  rs.getString(8) +  rs.getString(9) + rs.getString(10)+ rs.getString(11)");
-		        System.out.println (rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3) + " " + rs.getString(4) + " " + rs.getString(5) + " " + rs.getString(6) + " " + rs.getString(7) + " " + rs.getString(8) + " " + rs.getString(9) + " " + rs.getString(10) + rs.getString(11));
+		    	Logger.LogMessage("DataAccessLogic.saveDataOfApplication is started rs.getInt(1) +  rs.getString(2) +  rs.getInt(3) + rs.getString(4) + rs.getString(5) + rs.getString(6) +  rs.getString(7) +  rs.getString(8) +  rs.getString(9) + rs.getString(10)+ rs.getString(11)+ rs.getString(12)");
+		        System.out.println (rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3) + " " + rs.getString(4) + " " + rs.getString(5) + " " + rs.getString(6) + " " + rs.getString(7) + " " + rs.getString(8) + " " + rs.getString(9) + " " + rs.getString(10) + rs.getString(11) + rs.getString(12));
 		        Logger.LogMessage("DataAccessLogic.saveDataOfApplication is ended");
 		     }
 		     
@@ -56,7 +56,8 @@ public class DataAccessLogic
 		{
 			conn=DriverManager.getConnection(connectionString);
 			Statement table = conn.createStatement();
-			ResultSet rs = table.executeQuery("select name,age,sex,dob,height,wheight,birthday,addres,aadhaarno,PhoneNo from patient where UUID=" + pi.uuid);
+			ResultSet rs = table.executeQuery("select name,age,sex,dob,height,wheight,birthday,addres,aadhaarno,PhoneNo,studytype from patient where UUID=" + pi.uuid);
+			Logger.LogMessage("select statement of load data" +rs );
 			while( rs.next())
 			{
 				pi.name =rs.getString(1);
@@ -68,8 +69,8 @@ public class DataAccessLogic
 				pi.birthday=rs.getString(7);
 				pi.addres=rs.getString(8);
 				pi.aadhaarno=rs.getString(9);
-				
 				pi.PhoneNo=rs.getString(10);
+				pi.studytype=rs.getString(11);
 				return pi;
 			}
 			Logger.LogMessage("DataAccessLogic.loadData driverManager is ended");

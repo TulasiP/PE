@@ -1,4 +1,3 @@
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -434,6 +433,26 @@ public class BusinessLogicValidation
 //	
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
+	public void studytypeValidation(String studytypeValue) 
+	{
+			Logger.LogMessage("BusinessLogicValidation.studytypeValidation started");
+			String studytype=(studytypeValue);
+			String Coronary="Coronary";
+			String Paediatric="Paediatric"; 
+			String Electrophysiology="Electrophysiology";
+			if(studytype.compareTo(Coronary)==0||studytype.compareTo(Paediatric)==0||studytype.compareTo(Electrophysiology)==0)
+			{
+				System.out.println("It should accepts");
+			}
+			else
+			{
+				errorMessageBox("Study Type can’t be given other than Coronary, Paediatric and Electrophysiology");
+			}
+			Logger.LogMessage("BusinessLogicValidation.studytypeValidation ended");
+
+	}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	
 	private void errorMessageBox(String message) 
 	{
@@ -474,6 +493,7 @@ public class BusinessLogicValidation
 		 addressValidation(pi.addres);
 		 aadhaarnoValidation(pi.aadhaarno);
 		 PhoneNoValidation(pi.PhoneNo);
+		 studytypeValidation(pi.studytype);
 		 CalculateWeekday calc=new CalculateWeekday();
 		 String day=calc.getWeekday(pi.dob);
 		 pi.birthday=day;
@@ -481,6 +501,7 @@ public class BusinessLogicValidation
 		
 	}
 	
+
 	private String ConvertDate(String date) 
 	{
 		String format = "dd/mm/yyyy";

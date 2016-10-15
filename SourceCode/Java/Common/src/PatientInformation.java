@@ -2,6 +2,7 @@
 
 public class PatientInformation
 { 
+	
 		String uuid;
 		String name;
 		String age;
@@ -13,6 +14,7 @@ public class PatientInformation
 		String addres;
 		String aadhaarno;
 		String PhoneNo;
+		String studytype;
 
 }
 
