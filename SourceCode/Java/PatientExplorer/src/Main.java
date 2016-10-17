@@ -74,12 +74,9 @@ public class Main extends Application
 		phonenumberText=new TextField();
 		
 		Text studytypeLabel=new Text("Study Type");
-		ObservableList<String> items =FXCollections.observableArrayList("Coronary", "Paediatric", "Electrophysiology");
+		ObservableList<String> items =FXCollections.observableArrayList("Coronary", "Pediatric", "Electrophysiology");
 		studytypeText=new ComboBox<String>(items);
 		studytypeText.getSelectionModel().selectFirst();
-		//studytypeText.setItems(items);
-		
-		//ComboBox<String> cb=new ComboBox<String>(items);
 		
 		Button saveButton=new Button("Save");
 		saveButton.setOnAction(e-> validateData());
@@ -88,23 +85,32 @@ public class Main extends Application
 		LoadButton.setOnAction(e-> loadData());
 		
 		pane.getChildren().addAll(uidLabel, uidText, nameLabel, nameText,ageLabel,ageText,sexLabel ,sexText,dobLabel,dobText,heightLabel,heightText,weightLabel,weightText,birthdayLabel,birthdayText,addressLabel,addressText,aadhaarnoLabel,aadhaarnoText,phonenumberLabel,phonenumberText,studytypeLabel,studytypeText,saveButton,LoadButton);
-		
-//		studytypeText.getSelectionModel().selectNext();
-//		studytypeText.getSelectionModel().selectLast();
-		
+
+//		uidText.setText("1");
+//		nameText.setText("test");
+//		ageText.setText("111");
+//		sexText.setText("Male");
+//		dobText.setText("01/01/2000");
+//		heightText.setText("5' 6\"");
+//		weightText.setText("100");
+//		birthdayText.setText("Sunday");
+//		addressText.setText("test");
+//		aadhaarnoText.setText("1234567890");
+//		phonenumberText.setText("1234567890");
+//		studytypeText.setValue("Coronary");
 	}
 	
 	public void loadData() 
 	{
 		Logger.LogMessage("Main.loadData started");
-		BusinessLogicValidation bussinessLogic = new BusinessLogicValidation();//
+		BusinessLogicValidation bussinessLogic = new BusinessLogicValidation();
 		PatientInformation pi=new PatientInformation();
 		pi.uuid=uidText.getText();
 		PatientInformation plpi=bussinessLogic.loadData(pi);
 		nameText.setText(plpi.name);
 		ageText.setText(plpi.age);
 		sexText.setText(plpi.sex);
-		dobText.setText(plpi.dob.substring(0, 11));
+		dobText.setText(plpi.dob);
 		heightText.setText(plpi.height);
 		weightText.setText(plpi.wheight);
 		birthdayText.setText(plpi.birthday);
@@ -117,7 +123,6 @@ public class Main extends Application
 	
 	public void validateData()
 	{
-		
 		Logger.LogMessage("Main.validateData started ");
 		PatientInformation pi=new PatientInformation();
 		pi.aadhaarno=aadhaarnoText.getText();

@@ -28,7 +28,7 @@ GO
 use [pcidb]
 GO
 drop table patient;
-Create table patient(UUID nvarchar(50) PRIMARY KEY, Name nvarchar(50), Age int , Sex nvarchar(50),  DOB date , Height nvarchar(50) , Wheight nvarchar(50) , BirthDay nvarchar(50), Addres nvarchar(200), AadhaarNo nvarchar(50) , PhoneNo nvarchar(50) , StudyType nvarchar(50));
+Create table patient(UUID nvarchar(50) PRIMARY KEY, Name nvarchar(50), Age int , Sex nvarchar(50),  DOB datetime , Height nvarchar(50) , Wheight nvarchar(50) , BirthDay nvarchar(50),Addres nvarchar(200), AadhaarNo nvarchar(50) , PhoneNo nvarchar(50), StudyType int foreign key(Studytype) references studytype(studyno))
 GO
 
 --insert into patient(UUID, Name, DOB, Age, Sex, Height, Wheight, BirthDay, Addres, AadhaarNo) values('1','fsdfs','1/1/1981 12:00:00 AM',12,'Male','5''5"','34','Thursday',',dmfsksf','2323');
@@ -49,3 +49,64 @@ delete from patient where name=null;
 alter table patient add StudyType nvarchar(50);
 
 select name,age,sex,dob,height,wheight,birthday,addres,aadhaarno,studytype from patient where UUID=5
+
+
+create table test(number int, name varchar(2))
+alter table test add exam varchar(10)
+insert into test values(1,'aa','qtr')
+insert into test values(1,'aa','half')
+delete from test
+select * from test
+
+update test set name='bb' where exam='qtr'
+
+create table StudyType(studyno int primary key, studytype varchar(20))
+insert into StudyType values(1,'Coronary')
+insert into StudyType values(2,'Pediatric')
+insert into StudyType values(3,'Electrophysiology')
+select * from StudyType
+drop table StudyType
+update StudyType set studytype='Pediatric' where studyno=3
+update StudyType set studyno= where studytype='Pediatric'
+
+
+
+drop table StudyType
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('18','','','','1984-05-19','','','Wednesday','','','3477498797','c')
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('19','','','','1984-05-19','','','Wednesday','','','3477498797',4)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('20','','','','1984-05-19','','','Wednesday','','','3477498797',3)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('18','','','','1984-05-19','','','Wednesday','','','3477498797',1)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('19','','','','1984-05-19','','','Wednesday','','','3477498797',2)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('20','','','','1984-05-19','','','Wednesday','','','3477498797',3)
+
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('21','','','','1984-05-19','','','Wednesday','','','3477498797',1)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('22','','','','1984-05-19','','','Wednesday','','','3477498797',2)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('23','','','','1984-05-19','','','Wednesday','','','3477498797',3)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('24','','','','1984-05-19','','','Wednesday','','','3477498797',1)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('25','','','','1984-05-19','','','Wednesday','','','3477498797',2)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('26','','','','1984-05-19','','','Wednesday','','','3477498797',3)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('27','','','','1984-05-19','','','Wednesday','','','3477498797',1)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('28','','','','1984-05-19','','','Wednesday','','','3477498797',2)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('29','','','','1984-05-19','','','Wednesday','','','3477498797',3)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('30','','','','1984-05-19','','','Wednesday','','','3477498797',1)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('31','','','','1984-05-19','','','Wednesday','','','3477498797',2)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('32','','','','1984-05-19','','','Wednesday','','','3477498797',3)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('33','','','','1984-05-19','','','Wednesday','','','3477498797',1)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('34','','','','1984-05-19','','','Wednesday','','','3477498797',2)
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo, StudyType) values('35','','','','1984-05-19','','','Wednesday','','','3477498797',3)
+
+
+select * from patient
+select * from StudyType
+
+
+
+
+select * from patient
+select studytype from StudyType where studyno=3
+
+select studyno from studytype where studytype='Paediatric'
+insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo, PhoneNo , StudyType) values('3','test2','1114','Male','2000-01-01','5'' 6"','100','Friday','test','1234567890','1234567890',3)
+delete from patient
+select studytype from studytype where studyno=1;
+select studytype from studytype where studyno=2

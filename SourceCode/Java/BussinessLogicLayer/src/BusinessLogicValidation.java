@@ -438,9 +438,9 @@ public class BusinessLogicValidation
 			Logger.LogMessage("BusinessLogicValidation.studytypeValidation started");
 			String studytype=(studytypeValue);
 			String Coronary="Coronary";
-			String Paediatric="Paediatric"; 
+			String Pediatric="Pediatric"; 
 			String Electrophysiology="Electrophysiology";
-			if(studytype.compareTo(Coronary)==0||studytype.compareTo(Paediatric)==0||studytype.compareTo(Electrophysiology)==0)
+			if(studytype.compareTo(Coronary)==0||studytype.compareTo(Pediatric)==0||studytype.compareTo(Electrophysiology)==0)
 			{
 				System.out.println("It should accepts");
 			}
@@ -465,12 +465,13 @@ public class BusinessLogicValidation
 	public void saveData(PatientInformation pi)
 	{
 		Logger.LogMessage("BusinessLogicValidation.saveData started");
-		// Convert dob value from dd/mm/yyyy to yyyy-mm-dd
+		// Convert dob value from dd/mm/yyyy to yyyy-mm-dd 
 		pi.dob=ConvertDate(pi.dob);
 		DataAccessLogic data = new DataAccessLogic();
 		data.saveDataOfApplication(pi);	
 		Logger.LogMessage("BusinessLogicValidation.saveData started");
 	}
+
 
 	public PatientInformation loadData(PatientInformation pi)
 	{
@@ -480,6 +481,7 @@ public class BusinessLogicValidation
 		return blpi;
 		
 	}
+
 	public void ValidateData(PatientInformation pi) 
 	{
 		Logger.LogMessage("BusinessLogicValidation.ValidateData started");
@@ -501,8 +503,7 @@ public class BusinessLogicValidation
 		
 	}
 	
-
-	private String ConvertDate(String date) 
+private String ConvertDate(String date) 
 	{
 		String format = "dd/mm/yyyy";
 		SimpleDateFormat sdf = new SimpleDateFormat(format);
@@ -519,6 +520,23 @@ public class BusinessLogicValidation
 		
 		return null;
 	}
-	
 
+//private String ConvertDate1(String date) 
+//{
+//	String format = "yyyy-mm-dd";
+//	SimpleDateFormat sdf = new SimpleDateFormat(format);
+//	try
+//	{
+//		Date dt = sdf.parse(date);
+//		SimpleDateFormat sdf1 = new SimpleDateFormat("dd/mm/yyyy");
+//		return sdf1.format(dt);
+//	}
+//	catch(Exception ex)
+//	{
+//		Logger.LogMessage(ex.toString());	
+//	}
+//	
+//	return null;
+//}
+		
 }
