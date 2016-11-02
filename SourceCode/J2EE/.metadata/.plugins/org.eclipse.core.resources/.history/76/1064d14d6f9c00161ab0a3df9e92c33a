@@ -1,0 +1,78 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>patient</title>
+	<script type="text/javascript">
+		function AlertMessage(result)
+		{
+			if(result == "false")
+			{
+				alert("This is a sample message");
+			}
+		}
+	</script>
+</head>
+<body onload="AlertMessage(<%= session.getAttribute("valid") %>)">
+<form>
+	<%
+		String uid1=request.getParameter("uid");
+		String firstname1=request.getParameter("firstname");
+		String lastname1=request.getParameter("lastname");
+		String age1=request.getParameter("age");
+		String gender1=request.getParameter("gender");
+		String dob1=request.getParameter("dob");
+		String height1=request.getParameter("height");
+		String weight1=request.getParameter("weight");
+		String birthday1=request.getParameter("birthday");
+		String address1=request.getParameter("address");
+		String aadhaarno1=request.getParameter("aadhaarno");
+		String mobilenumber1=request.getParameter("mobilenumber");
+		String mailid1=request.getParameter("mailid");
+		String studytype1=request.getParameter("studytype");
+		
+	%>
+
+UID:<br><input type="text" name="UID" value=<%=uid1 %>>
+<br><br>
+FirstName:<br><input type="text" name="firstname" value=<%=firstname1 %> >
+  <br><br>
+LastName:<br><input type="text" name="lastname" value=<%=lastname1 %> >
+  <br><br>
+Age:<br><input type="text" name="age" value=<%=age1 %>>
+<br><br>
+Gender:<br><select name="gender"  value=<%=gender1 %>>
+  <option value="Male">Male</options>
+  <option value="Female">Female</option>
+  <option value="Others">Others</option>
+  </select>
+  <br><br>
+DOB:<br><input type="text" name="dob" value=<%=dob1%>>
+<br><br>
+Height:<br><input type="text" name="height" value=<%=height1 %>>
+<br><br>
+Weight:<br><input type="text" name="weight" value=<%=weight1 %>>
+<br><br>
+BirthDay:<br><input type="text" name="birthday" value=<%=birthday1 %>>
+<br><br>
+Address:<br><input type="text" name="address" value=<%=address1 %>>
+<br><br>
+AadhaarNo:<br> <input type="text" name="aadhaarno" value=<%=aadhaarno1 %>>
+<br><br>
+MobileNumber:<br><input type="text" name="mobilenumber" value=<%=mobilenumber1 %>>
+  <br><br>
+MailId:<br><input type="text" name="mailid" value=<%=mailid1 %>>
+  <br><br>
+Study Type:<br><select name=studytype value=<%=studytype1 %>>
+  <option value="Coronary">Coronary</options>
+  <option value="Pediatric">Pediatric</option>
+  <option value="ElectroPhysiology">ElectroPhysiology</option>
+ </select>
+ <br><br> 
+  <input type="submit" value="Register">
+</form>
+
+</body>
+</html>

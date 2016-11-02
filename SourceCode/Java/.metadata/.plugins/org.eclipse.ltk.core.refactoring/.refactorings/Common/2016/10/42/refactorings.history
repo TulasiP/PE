@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;logger&apos; to &apos;Logger&apos;&#x0D;&#x0A;- Original project: &apos;Common&apos;&#x0D;&#x0A;- Original element: &apos;logger&apos;&#x0D;&#x0A;- Renamed element: &apos;Logger&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;logger&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{logger.java[logger" matchStrategy="1" name="Logger" qualified="false" references="true" similarDeclarations="false" stamp="1476041223938" textual="false" version="1.0"/>
+</session>

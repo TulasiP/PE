@@ -1,0 +1,47 @@
+
+//public class validatedata 
+//{
+//
+//	public boolean uidValidation(String uidValue)//called method and method definition
+//	{
+//		
+//		try
+//		{
+//			int uid=Integer.parseInt(uidValue);
+//			if(uidValue==null)
+//			{
+//				System.out.println(uid);
+//			}
+//		}
+//		catch(Exception ex)
+//		{
+//			errorMessageBox(" uid Data is not filled in required fields");
+//			return false;
+//		}
+//		try  
+//		{
+//			long uid=Long.parseLong(uidValue);
+//			if(uid==0)
+//			{
+//				errorMessageBox("UID can’t be zero ");
+//			}
+//			if(uid<=0)
+//			{
+//				errorMessageBox("UID doesn’t accept negative numbers ");
+//			}
+//			if(uid<=9999999999L)
+//			{
+//				return true;
+//			}
+//			else 
+//			{
+//				errorMessageBox("UID can’t be more than 9999999999");
+//				return false;
+//			}
+//		}
+//		catch(Exception ex)
+//		{
+//			errorMessageBox("UID accepts only numbers");
+//			return false;
+//		}
+//}

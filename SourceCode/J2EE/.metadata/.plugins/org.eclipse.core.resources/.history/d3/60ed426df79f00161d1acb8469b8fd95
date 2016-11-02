@@ -1,0 +1,182 @@
+
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+
+@WebServlet("/patientservlet")
+public class PatientServlet extends HttpServlet 
+{
+	private static final long serialVersionUID = 1L;
+//	private static final Object MailId = null;
+       
+	public String ConvertDate1(String dob) 
+	{
+		String format = "dd/mm/yyyy";
+		SimpleDateFormat sdf = new SimpleDateFormat(format);
+		try
+		{
+			Date dt = sdf.parse(dob);
+			SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-mm-dd");
+			return sdf1.format(dt);
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.toString());	
+		}
+		return null;
+	}
+	
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		long uid=0;
+		try
+		{
+			HttpSession session=request.getSession();
+			
+			uid=Long.parseLong(request.getParameter("uid"));
+			if ((uid > 0) && (uid < 9999999999L)) 
+		    {
+				// uid is valid 
+				session.setAttribute("valid", 1);
+				database(request);
+		    	request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+		    } 
+		    else 
+		    {   
+		    	//uid is invalid
+		    	session.setAttribute("valid", 0);
+		    	request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+
+		    	System.out.println(uid);
+		    }  	
+		}
+		catch (NumberFormatException e) 
+		{
+			System.out.println(e.toString());
+		}
+		
+		
+   	
+		
+//		if(firstname.isEmpty())
+//		{
+//			System.out.println(" name Data is not filled in required fields");
+//			return;
+//		}
+//		int asciinumber=0;
+//		int ascii=firstname.charAt(0);
+//		System.out.println(ascii);
+//		for(int i=0;i<=firstname.length()-1;i++)
+//		{
+//			asciinumber=firstname.charAt(i);
+//			if(asciinumber>=97 && asciinumber<=122 || asciinumber>=65 && asciinumber<=90 || asciinumber==32)
+//			{
+//				System.out.println("ascii value is avaliable");
+//			}
+//			else
+//			{
+//				System.out.println("Name doesn’t accept special characters other than space");
+//				break;
+//			}
+//		}
+//		if(firstname.length()>50)
+//		{
+//			System.out.println("Length of the name can’t be more than 50 characters");
+//		}
+//		
+//	}
+		
+
+//		//PrintWriter out=response.getWriter();
+////		out.println("tulasi");
+////		System.out.println(firstname);
+//	    
+//	    HttpSession session=request.getSession();
+//	     session.setAttribute("uid", uid);
+//	     session.setAttribute("firstname", firstname);
+//	     session.setAttribute("lastname", lastname);
+//	     session.setAttribute("age", age);
+//	     session.setAttribute("gender", gender);
+//	     session.setAttribute("dob", dob);
+//	     session.setAttribute("height", height);
+//	     session.setAttribute("weight", weight);
+//	     session.setAttribute("birthday", birthday);
+//	     session.setAttribute("address", address);
+//	     session.setAttribute("aadhaarno", aadhaarno);
+//	     session.setAttribute("mobilenumber", mobilenumber);
+//	     session.setAttribute("mailid", mailid);
+//	     session.setAttribute("studytype", studytype);
+//	     getServletContext().getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+
+	     
+				
+		}
+
+	private String database(HttpServletRequest request) 
+	
+	{
+		long uid=Long.parseLong(request.getParameter("uid"));
+		String firstname=request.getParameter("firstname");
+		String lastname=request.getParameter("lastname");
+		String age=request.getParameter("age");
+		String gender=request.getParameter("gender");
+		String dob=request.getParameter("dob");
+		String height=request.getParameter("height");
+		String weight=request.getParameter("weight");
+		String birthday=request.getParameter("birthday");
+		String address=request.getParameter("address");
+		String aadhaarno=request.getParameter("aadhaarno");
+	    String mobilenumber=request.getParameter("mobilenumber");
+	    String mailid=request.getParameter("mailid");
+	    String studytype=request.getParameter("studytype");
+	    
+	    String connectionString = "jdbc:sqlserver://localhost:1433;database=pcidb;user=sa;password=sa";
+		 Connection conn=null;
+			try
+			{		
+				
+					Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance(); 
+					conn=DriverManager.getConnection(connectionString);
+					String insertFormat="insert into patientlog(UUID,FirstName,LastName,Age,Gender,DOB,Height,Wheight,BirthDay,Addres,Aadhaarno,MobileNumber,MailId,StudyType) values('%1$s','%2$s','%3$s','%4$s','%5$s','%6$s','%7$s','%8$s','%9$s','%10$s','%11$s','%12$s','%13$s','%14$s')";
+					String resultSet=String.format(insertFormat,uid, firstname,lastname,age,gender,ConvertDate1(dob),height.replace("'", "''"),weight,birthday,address,aadhaarno,mobilenumber,mailid,studytype);
+					System.out.println(resultSet);
+					Statement table = conn.createStatement();
+					table.execute(resultSet);
+//					ResultSet rs = table.executeQuery("select * from patientlog");
+//					// Retrieve from ResultSet and display column data
+////				     while (rs.next()) 
+////				     {
+//				    	
+////				        System.out.println (rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3) + " " + rs.getString(4) + " " + rs.getString(5));
+//////				        
+//////				 } 
+					System.out.println(resultSet);
+					System.out.println("registerd succesfully");
+					conn.close();
+					
+			}
+			catch(Exception ex)
+			{
+					
+					System.out.println(ex.toString());
+					
+			}	
+		return firstname;
+	}
+}
+		
+
+
+

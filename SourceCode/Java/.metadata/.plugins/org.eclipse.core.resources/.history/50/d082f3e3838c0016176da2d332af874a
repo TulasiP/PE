@@ -1,0 +1,54 @@
+import java.sql.*;
+
+public class DataAccessLogic 
+
+{
+	public void saveDataOfApplication(String uidValue, String nameValue, String ageValue, String sexValue, String dobValue, String heightValue, String weightValue, String birthdayValue, String addressValue, String aadhaarnoValue)
+	{
+		String connectionString = "jdbc:sqlserver://localhost:1433;database=pcidb;user=sa;password=sa";
+		Connection conn=null;
+		try
+		{
+			conn=DriverManager.getConnection(connectionString);
+			String insertFormat="insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay , Addres  , AadhaarNo) values('%1$s','%2$s','%3$s','%4$s','%5$s','%6$s','%7$s','%8$s','%9$s','%10$s')";
+			String resultSet=String.format(insertFormat, uidValue , nameValue , ageValue , sexValue , dobValue.replace("/", "-"), heightValue.replace("'", "''") , weightValue , birthdayValue , addressValue , aadhaarnoValue);
+			Statement table = conn.createStatement();
+			ResultSet rs = table.executeQuery("select * from patient");
+
+		     // Retrieve from ResultSet and display column data
+		     while (rs.next()) 
+		     {
+		        System.out.println (rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3) + " " + rs.getString(4) + " " + rs.getString(5) + " " + rs.getString(6) + " " + rs.getString(7) + " " + rs.getString(8) + " " + rs.getString(9) + " " + rs.getString(10));
+		     }
+			System.out.println(resultSet);
+			table.execute(resultSet);
+			System.out.println("Values inserted successfully");
+			conn.close();
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.toString());
+		}	
+	}
+
+	public void getName(String uidValue)
+	{
+		String connectionString = "jdbc:sqlserver://localhost:1433;database=pcidb;user=sa;password=sa";
+		Connection conn=null;
+		try
+		{
+			conn=DriverManager.getConnection(connectionString);
+			Statement table = conn.createStatement();
+			ResultSet rs = table.executeQuery("select name from patient where uid=1");
+			while( rs.getName(uidValue))
+			{
+				return name;
+			}
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.toString());
+		}
+	}
+}
+		

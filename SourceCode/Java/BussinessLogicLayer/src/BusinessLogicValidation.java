@@ -520,23 +520,5 @@ private String ConvertDate(String date)
 		
 		return null;
 	}
-
-//private String ConvertDate1(String date) 
-//{
-//	String format = "yyyy-mm-dd";
-//	SimpleDateFormat sdf = new SimpleDateFormat(format);
-//	try
-//	{
-//		Date dt = sdf.parse(date);
-//		SimpleDateFormat sdf1 = new SimpleDateFormat("dd/mm/yyyy");
-//		return sdf1.format(dt);
-//	}
-//	catch(Exception ex)
-//	{
-//		Logger.LogMessage(ex.toString());	
-//	}
-//	
-//	return null;
-//}
 		
 }

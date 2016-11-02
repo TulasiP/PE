@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="GitCommitMessageComponent">
+		<list key="C:\Users\Rameshbabu-P\Documents\GitHub\PE\.git">
+			<item value="false"/>
+			<item value="TulasiP &lt;meghana.tulasi@yahoo.com&gt;"/>
+			<item value="First time commit"/>
+			<item value="TulasiP &lt;meghana.tulasi@yahoo.com&gt;"/>
+			<item value="c31d1b5d894874cee657643cb821fb7cfb5d33d9"/>
+		</list>
+	</section>
+	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
+		<item value="500,500" key="STAGING_SASH_FORM_WEIGHT"/>
+		<item value="false" key="sortItemState"/>
+		<item value="500,500" key="HORIZONTAL_SASH_FORM_WEIGHT"/>
+	</section>
+</section>

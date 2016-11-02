@@ -110,3 +110,19 @@ insert into patient(UUID , Name , Age , Sex ,  DOB , Height , Wheight , BirthDay
 delete from patient
 select studytype from studytype where studyno=1;
 select studytype from studytype where studyno=2
+
+select * from patientlog
+
+Create table patientlog(FirstName nvarchar(50) , LastName nvarchar(50), Gender nvarchar(50) , MobileNumber nvarchar(50), MailId nvarchar(50) )
+
+create table sample (a nvarchar(50) , b nvarchar(50))
+select * from sample
+
+insert into patientlog(FirstName,LastName,Gender,MobileNumber,MailId) values('','','null','','')
+
+alter table patientlog add StudyType nvarchar(50);
+drop table patientlog
+
+Create table patientlog(UUID nvarchar(50),FirstName nvarchar(50) , LastName nvarchar(50),Age nvarchar(50), Gender nvarchar(50),DOB date,Height nvarchar(50),Wheight nvarchar(50),BirthDay nvarchar(50),Addres nvarchar(50),Aadhaarno nvarchar(50), MobileNumber nvarchar(50), MailId nvarchar(50),StudyType nvarchar(50))
+select * from patientlog
+delete from patientlog

@@ -1,0 +1,116 @@
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class BussinessLogicValidation 
+{
+   public void validateUid(HttpServletRequest request, HttpServletResponse response)
+   {
+	   long uid=0;
+		try
+		{
+			HttpSession session=request.getSession();
+			
+			try
+			{
+				uid=Long.parseLong(request.getParameter("uid"));
+			}
+			catch(NumberFormatException ex)
+			{
+				if(request.getParameter("uid").isEmpty())
+				{
+					session.setAttribute("valid", 3);
+			    	
+				}
+				else
+				{
+					session.setAttribute("valid", 4);
+			    	
+				}
+				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				
+			}
+			if(uid < 0)
+			{
+				session.setAttribute("valid",5);
+			}
+			else if (uid==0) 
+			{
+					//uid is invalid
+					session.setAttribute("valid", 0);
+					System.out.println(uid);
+			}
+			else if(uid > 9999999999L)
+			{   
+				session.setAttribute("valid",2);
+			}
+			else 
+			{
+				// uid is valid 
+				session.setAttribute("valid", 1);
+				registerDataOfApplication(request);
+				
+			}
+			request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+		}
+		catch (Exception e) 
+		{
+			System.out.println(e);
+		}
+   }
+		
+   public void validatefirstname(HttpServletRequest request, HttpServletResponse response)
+   {
+		String firstname;
+		try
+		{
+			HttpSession session=request.getSession();
+			firstname=request.getParameter("firstname");
+			System.out.println(firstname);
+			
+			if(request.getParameter("firstname").isEmpty())
+			{
+				session.setAttribute("valid", 6);
+					
+			}
+				  		 
+			
+				
+//			int asciinumber=0;
+//			int ascii=firstname.charAt(0);
+//			System.out.println(ascii);
+//			for(int i=0;i<=firstname.length()-1;i++)
+//			{
+//				asciinumber=firstname.charAt(i);
+//				if(asciinumber>=97 && asciinumber<=122 || asciinumber>=65 && asciinumber<=90 || asciinumber==32)
+//				{
+//					session.setAttribute("valid",8);
+//					registerDataOfApplication(request);
+//					System.out.println("ascii value is avaliable");
+//				}
+//				else
+//				{
+//					("Name doesn’t accept special characters other than space");
+//						
+//				}
+//			}
+			
+		}
+		catch (Exception e) 
+		{
+			System.out.println(e);
+		}	
+   }
+
+
+
+   
+   
+   
+   public void registerDataOfApplication(HttpServletRequest request) 
+   {
+	   DataAcessLogic data=new DataAcessLogic();
+	   data.registerDataOfApplication(request);
+   }
+   
+}

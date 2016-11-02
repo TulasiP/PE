@@ -50,6 +50,8 @@
             this.Address = new System.Windows.Forms.TextBox();
             this.AadhaarNo = new System.Windows.Forms.TextBox();
             this.Load = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -138,13 +140,13 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(40, 382);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(64, 13);
+            this.label10.Size = new System.Drawing.Size(55, 13);
             this.label10.TabIndex = 9;
-            this.label10.Text = "Aadhaar No";
+            this.label10.Text = "Phone No";
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(152, 431);
+            this.Save.Location = new System.Drawing.Point(152, 518);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(145, 36);
             this.Save.TabIndex = 10;
@@ -233,18 +235,41 @@
             // 
             // Load
             // 
-            this.Load.Location = new System.Drawing.Point(326, 431);
+            this.Load.Location = new System.Drawing.Point(326, 518);
             this.Load.Name = "Load";
             this.Load.Size = new System.Drawing.Size(145, 36);
             this.Load.TabIndex = 21;
             this.Load.Text = "Load";
             this.Load.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Coronary",
+            "Paediatric",
+            "Electrophysiology"});
+            this.comboBox1.Location = new System.Drawing.Point(152, 420);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(319, 21);
+            this.comboBox1.TabIndex = 22;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(40, 428);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(61, 13);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Study Type";
+            // 
             // PatientExplorer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 490);
+            this.ClientSize = new System.Drawing.Size(542, 606);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Load);
             this.Controls.Add(this.AadhaarNo);
             this.Controls.Add(this.Address);
@@ -267,6 +292,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            //this.Name = "PatientExplorer";
             this.Text = "PatientExplorer";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -297,6 +323,8 @@
         private System.Windows.Forms.TextBox Address;
         private System.Windows.Forms.TextBox AadhaarNo;
         private System.Windows.Forms.Button Load;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label11;
     }
 }
 
