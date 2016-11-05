@@ -70,7 +70,91 @@
 			}
 			if(result==16)
 			{
-				alert("age cannot be more than 150")		
+				alert("age cannot be more than 150");		
+			}
+			if(result==17)
+			{
+				alert("Gender cannot be given other than Male, Female and Other")		
+			}
+			if(result==18)
+			{
+				alert("dob data is not filled in required fields");		
+			}
+			if(result==19)
+			{
+				alert("In dob year should not be less than 1866");		
+			}
+			if(result==20)
+			{
+				alert("Height data is not correct format");		
+			}
+			if(result==21)
+			{
+				alert("Weight data is not filled in required fields")		
+			}
+			if(result==22)
+			{
+				alert("Weight does not accept negative numbers");		
+			}
+			if(result==23)
+			{
+				alert("Weight does not accept more than 300");		
+			}
+			if(result==24)
+			{
+				alert("Birthday data is not filled in required fields");		
+			}
+			if(result==25)
+			{
+				alert("Birthday does not accept numbers & special characters");		
+			}
+			if(result==26)
+			{
+				alert("Length of the birthday cannot be more than 50 characters");		
+			}
+			if(result==27)
+			{
+				alert("Address data is not filled in required fields");		
+			}
+			if(result==28)
+			{
+				alert("Address does not accept any special characters other than #, .(dot) and @");		
+			}
+			if(result==29)
+			{
+				alert("Aadhaarno data is not filled in required fields");		
+			}
+			if(result==30)
+			{
+				alert("Aadhaarno accepts only numbers");		
+			}
+			if(result==31)
+			{
+				alert("Aadhaarno does not accept more than 16digits")		
+			}
+			if(result==32)
+			{
+				alert("MobileNumber data is not filled in required fields");		
+			}
+			if(result==33)
+			{
+				alert("MobileNumber accepts only numbers ");		
+			}
+			if(result==34)
+			{
+				alert("MobileNumber does not accept more than 10digits");		
+			}
+			if(result==35)
+			{
+				alert("Mailid data is not filled in required fields");		
+			}
+			if(result==36)
+			{
+				alert("Given mailid is not in correct format");		
+			}
+			if(result==37)
+			{
+				alert("Studytype cannot be given other than Coronary,Pediatric and Electrophysiology");		
 			}
 		}
 	</script>
@@ -104,6 +188,8 @@ LastName:<br><input type="text" name="lastname" value=<%=lastname1 %> >
 Age:<br><input type="text" name="age" value=<%=age1 %>>
 <br><br>
 Gender:<br><select name="gender"  value=<%=gender1 %>>
+  
+  <option value=""></options>
   <option value="Male">Male</options>
   <option value="Female">Female</option>
   <option value="Others">Others</option>

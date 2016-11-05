@@ -27,15 +27,16 @@ LastName:<br><input type="text" name="lastname" value=P>
   <br><br>
 Age:<br><input type="text" name="age" value=31>
 <br><br>
-Gender:<br><select name="gender" >
+Gender:<br><select name="gender" > 
   <option value="Male">Male</options>
   <option value="Female">Female</option>
   <option value="Others">Others</option>
+  <option value=""></options>
   </select>
   <br><br>
-DOB:<br><input type="text" name="dob" value=16/06/1985>
+DOB:<br><input type="text" name="dob" value=12/09/2011>
 <br><br>
-Height:<br><input type="text" name="height" value=" 5' 6" " >
+Height:<br><input type="text" name="height" value= "5' 6"" >
 <br><br>
 Weight:<br><input type="text" name="weight" value=75>
 <br><br>
@@ -50,9 +51,10 @@ MobileNumber:<br><input type="text" name="mobilenumber" value=65784897>
 MailId:<br><input type="text" name="mailid" value=gydufgu@yahoo.com>
   <br><br>
 Study Type:<br><select name=studytype>
+<option value=""></options>
   <option value="Coronary">Coronary</options>
   <option value="Pediatric">Pediatric</option>
-  <option value="ElectroPhysiology">ElectroPhysiology</option>
+  <option value="ElectroPhysiology">ElectroPhysiology</option> 
  </select>
  <br><br> 
   <input type="submit" value="Register">

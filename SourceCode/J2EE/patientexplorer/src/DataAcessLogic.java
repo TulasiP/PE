@@ -20,11 +20,11 @@ public class DataAcessLogic
 			String gender=request.getParameter("gender");
 			String dob=request.getParameter("dob");
 			String height=request.getParameter("height");
-			String weight=request.getParameter("weight");
+			long weight=Long.parseLong(request.getParameter("weight"));
 			String birthday=request.getParameter("birthday");
 			String address=request.getParameter("address");
-			String aadhaarno=request.getParameter("aadhaarno");
-		    String mobilenumber=request.getParameter("mobilenumber");
+			long aadhaarno=Long.parseLong(request.getParameter("aadhaarno"));
+		    long mobilenumber=Long.parseLong(request.getParameter("mobilenumber"));
 		    String mailid=request.getParameter("mailid");
 		    String studytype=request.getParameter("studytype");
 		    

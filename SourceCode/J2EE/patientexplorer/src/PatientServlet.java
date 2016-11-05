@@ -23,13 +23,48 @@ public class PatientServlet extends HttpServlet
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		
+		HttpSession session=request.getSession();
+		
 		BussinessLogicValidation bussinessLogic = new BussinessLogicValidation();
 	    bussinessLogic.validateUid(request, response);
 	    bussinessLogic.validateFirstname(request, response);
 	    bussinessLogic.validateLastname(request,response);
 	    bussinessLogic.validateAge(request,response);
+	    bussinessLogic.validateGender(request,response);
+	    bussinessLogic.validateDob(request,response);
+	    boolean result=bussinessLogic.validateHeight(request,response);
+	    if(result == false)
+	    {
+   			session.setAttribute("valid", 20);
+   			request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+   			return;
+	    }
+		bussinessLogic.validateWeight(request,response);
+		bussinessLogic.validateBirthday(request,response);
+		bussinessLogic.validateAddress(request,response);
+		bussinessLogic.validateAadhaarno(request,response);
+		bussinessLogic.validateMobilenumber(request,response);
+		bussinessLogic.validateMailid(request,response);
+		bussinessLogic.validateStudytype(request,response);
+		bussinessLogic.registerDataOfApplication(request);
 	    
-		//registerDataOfApplication(request);
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    //registerDataOfApplication(request);
 	    //PrintWriter out=response.getWriter();
 ////	  out.println("tulasi");
 ////		System.out.println(firstname);
