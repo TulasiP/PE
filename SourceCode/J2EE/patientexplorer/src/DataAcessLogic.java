@@ -1,5 +1,6 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 public class DataAcessLogic 
 {
 
-	public void registerDataOfApplication(HttpServletRequest request) 
+	public boolean registerDataOfApplication(HttpServletRequest request) 
 	{
 		
 		
@@ -36,8 +37,13 @@ public class DataAcessLogic
 				
 					Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance(); 
 					conn=DriverManager.getConnection(connectionString);
+					Statement selectStudyNoStatement = conn.createStatement();
+					ResultSet rsStudyNo = selectStudyNoStatement.executeQuery(String.format("select studyno from studytype where studytype='%1$s'", request.getParameter("studytype")));
+					rsStudyNo.next();
+					int studyNo=rsStudyNo.getInt(1);
+					System.out.println(studyNo);
 					String insertFormat="insert into patientlog(UUID,FirstName,LastName,Age,Gender,DOB,Height,Wheight,BirthDay,Addres,Aadhaarno,MobileNumber,MailId,StudyType) values('%1$s','%2$s','%3$s','%4$s','%5$s','%6$s','%7$s','%8$s','%9$s','%10$s','%11$s','%12$s','%13$s','%14$s')";
-					String resultSet=String.format(insertFormat,uid, firstname,lastname,age,gender,ConvertDate1(dob),height.replace("'", "''"),weight,birthday,address,aadhaarno,mobilenumber,mailid,studytype);
+					String resultSet=String.format(insertFormat,uid, firstname,lastname,age,gender,ConvertDate1(dob),height.replace("'", "''"),weight,birthday,address,aadhaarno,mobilenumber,mailid,studyNo);
 					System.out.println(resultSet);
 					Statement table = conn.createStatement();
 					table.execute(resultSet);
@@ -52,14 +58,15 @@ public class DataAcessLogic
 					System.out.println(resultSet);
 					System.out.println("registerd succesfully");
 					conn.close();
-					
+					return true;
 			}
 			catch(Exception ex)
 			{
 					
 					System.out.println(ex.toString());
-					
+					return false;
 			}
+
 	}
 	
 	public String ConvertDate1(String dob) 

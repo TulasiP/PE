@@ -122,7 +122,16 @@ insert into patientlog(FirstName,LastName,Gender,MobileNumber,MailId) values('',
 
 alter table patientlog add StudyType nvarchar(50);
 drop table patientlog
-
-Create table patientlog(UUID nvarchar(50),FirstName nvarchar(50) , LastName nvarchar(50),Age nvarchar(50), Gender nvarchar(50),DOB date,Height nvarchar(50),Wheight nvarchar(50),BirthDay nvarchar(50),Addres nvarchar(50),Aadhaarno nvarchar(50), MobileNumber nvarchar(50), MailId nvarchar(50),StudyType nvarchar(50))
+drop table Studytype
+create table StudyType(studyno int primary key, studytype varchar(20))
+create table StudyType(studyno int primary key, studytype varchar(20))
+Create table patientlog(UUID nvarchar(50) PRIMARY KEY,FirstName nvarchar(50) , LastName nvarchar(50),Age nvarchar(50), Gender nvarchar(50),DOB date,Height nvarchar(50),Wheight nvarchar(50),BirthDay nvarchar(50),Addres nvarchar(50),Aadhaarno nvarchar(50), MobileNumber nvarchar(50), MailId nvarchar(50),StudyType int foreign key(StudyType) references studytype(studyno))
 select * from patientlog
 delete from patientlog
+select * from patientlog where StudyType like 'P%'
+
+create table StudyType(studyno int primary key, studytype varchar(20))
+insert into StudyType values(1,'Coronary')
+insert into StudyType values(2,'Pediatric')
+insert into StudyType values(3,'Electrophysiology')
+select * from StudyType

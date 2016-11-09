@@ -25,11 +25,11 @@ public class BussinessLogicValidation
 				{
 					session.setAttribute("valid", 3);
 			    }
-				else
+				else 
 				{
 					session.setAttribute("valid", 4);
 				}
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 			
 				
@@ -55,7 +55,7 @@ public class BussinessLogicValidation
 			
 			if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 			{
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 		}
 		catch (Exception e) 
@@ -95,7 +95,7 @@ public class BussinessLogicValidation
 			}
 			if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 			{
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 		}
 		catch (Exception e) 
@@ -135,7 +135,7 @@ public class BussinessLogicValidation
 			}
 			if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 			{
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 		}
 		catch (Exception e) 
@@ -165,7 +165,7 @@ public class BussinessLogicValidation
 				{
 					session.setAttribute("valid", 13);
 				}
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 			
 			if(age < 0)
@@ -191,7 +191,7 @@ public class BussinessLogicValidation
 			
 			if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 			{
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 		}
 		catch (Exception e) 
@@ -222,7 +222,7 @@ public class BussinessLogicValidation
 			}
 			if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 			{
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 		}
 		catch (Exception e) 
@@ -246,7 +246,7 @@ public class BussinessLogicValidation
 					}
 					if(Integer.parseInt(session.getAttribute("valid").toString())==18)
 					{
-						request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+						request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 					}
 				}
 				catch (Exception e) 
@@ -271,7 +271,7 @@ public class BussinessLogicValidation
 				}
 				if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 				{
-					request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+					request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 				}
 			 }
 	   		catch(Exception e)
@@ -406,7 +406,7 @@ public class BussinessLogicValidation
 		   	}
 		   	if(Integer.parseInt(session.getAttribute("valid").toString())==21)
 			{
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 		   }
 		   	 if(weight<0)
@@ -423,7 +423,7 @@ public class BussinessLogicValidation
 			}
 			if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 			{
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 		   
 		}
@@ -464,7 +464,7 @@ public class BussinessLogicValidation
 			}
 			if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 			{
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 		}
 		catch (Exception e) 
@@ -503,7 +503,7 @@ public class BussinessLogicValidation
 			}
 			if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 			{
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 		}
 		catch (Exception e) 
@@ -532,7 +532,7 @@ public class BussinessLogicValidation
 				{
 					session.setAttribute("valid", 30);
 				}
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 
 			if(aadhaarno > 9999999999999999L)
@@ -548,7 +548,7 @@ public class BussinessLogicValidation
 			
 			if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 			{
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 		}
 		catch (Exception e) 
@@ -578,7 +578,7 @@ public class BussinessLogicValidation
 				{
 					session.setAttribute("valid", 33);
 				}
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 
 			if(mobilenumber > 9999999999L)
@@ -594,7 +594,7 @@ public class BussinessLogicValidation
 			
 			if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 			{
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			}
 		}
 		catch (Exception e) 
@@ -618,7 +618,7 @@ public class BussinessLogicValidation
 			   }
 			   if(Integer.parseInt(session.getAttribute("valid").toString())==35)
 				{
-					request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+					request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 				}
 			  
 		   }
@@ -637,7 +637,7 @@ public class BussinessLogicValidation
 		   }
 		   if(Integer.parseInt(session.getAttribute("valid").toString())!=1)
 		   {
-			   request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+			   request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 		   }	   
 		   
 	   }
@@ -658,11 +658,13 @@ public class BussinessLogicValidation
 			try
 			{
 				studytype=request.getParameter("studytype");
+				
 				if(studytype.isEmpty())
 				{
 					session.setAttribute("valid",37);
+					request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 				}
-				request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+				
 			}
 			catch (Exception e) 
 			{
@@ -676,10 +678,11 @@ public class BussinessLogicValidation
 		
    }
    
-   public void registerDataOfApplication(HttpServletRequest request) 
+   public boolean registerDataOfApplication(HttpServletRequest request) 
    {
 	   DataAcessLogic data=new DataAcessLogic();
-	   data.registerDataOfApplication(request);
+	   boolean result=data.registerDataOfApplication(request);
+	   return result;
    }
    
 }

@@ -24,7 +24,7 @@ public class PatientServlet extends HttpServlet
 	{
 		
 		HttpSession session=request.getSession();
-		
+		//session.invalidate();
 		BussinessLogicValidation bussinessLogic = new BussinessLogicValidation();
 	    bussinessLogic.validateUid(request, response);
 	    bussinessLogic.validateFirstname(request, response);
@@ -36,7 +36,7 @@ public class PatientServlet extends HttpServlet
 	    if(result == false)
 	    {
    			session.setAttribute("valid", 20);
-   			request.getRequestDispatcher("/patientreceiving.jsp").forward(request, response);
+   			request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
    			return;
 	    }
 		bussinessLogic.validateWeight(request,response);
@@ -46,17 +46,21 @@ public class PatientServlet extends HttpServlet
 		bussinessLogic.validateMobilenumber(request,response);
 		bussinessLogic.validateMailid(request,response);
 		bussinessLogic.validateStudytype(request,response);
-		bussinessLogic.registerDataOfApplication(request);
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
+		
+		boolean saveResult=bussinessLogic.registerDataOfApplication(request);
+		if(saveResult==true)
+		{
+				// successfully stored in database
+				session.setAttribute("valid",38);		
+		}
+		else
+		{
+			session.setAttribute("valid",39);	
+		}
+		request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
+			
+		
+		
 	    
 	    
 	    
