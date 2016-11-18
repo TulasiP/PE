@@ -182,10 +182,8 @@ public class BusinessLogicValidation {
 		int length2 = 6;
 		if (length1 == 5) {
 			if (c <= number) {
-
 				System.out.println("inches value is accepted");
 			}
-
 		}
 		char c1 = height.charAt(3);
 		char c2 = height.charAt(4);
