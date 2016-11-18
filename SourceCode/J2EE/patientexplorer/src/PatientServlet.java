@@ -24,6 +24,7 @@ public class PatientServlet extends HttpServlet
 	{
 		
 		HttpSession session=request.getSession();
+		
 		//session.invalidate();
 		BussinessLogicValidation bussinessLogic = new BussinessLogicValidation();
 	    bussinessLogic.validateUid(request, response);

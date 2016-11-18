@@ -8,6 +8,11 @@
 	<script type="text/javascript">
 		function AlertMessage(result)
 		{
+			a=1;
+			b=2;
+			c=a+b;
+			alert("Test" + c);
+			
 			if(result==0)
 			{
 				alert("UID does not accept zero value");
@@ -179,7 +184,7 @@
 <br><br><br>
 <a href="">Sign-In/Register</a>
 <br><br>
-<form action="patientservlet">
+<form action="patientservlet" method="post">
 UID:<br><input type="text" name="uid" value=1>
 <br><br>
 FirstName:<br><input type="text" name="firstname" value="tulasi">
