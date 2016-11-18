@@ -86,18 +86,7 @@ public class Main extends Application
 		
 		pane.getChildren().addAll(uidLabel, uidText, nameLabel, nameText,ageLabel,ageText,sexLabel ,sexText,dobLabel,dobText,heightLabel,heightText,weightLabel,weightText,birthdayLabel,birthdayText,addressLabel,addressText,aadhaarnoLabel,aadhaarnoText,phonenumberLabel,phonenumberText,studytypeLabel,studytypeText,saveButton,LoadButton);
 
-//		uidText.setText("1");
-//		nameText.setText("test");
-//		ageText.setText("111");
-//		sexText.setText("Male");
-//		dobText.setText("01/01/2000");
-//		heightText.setText("5' 6\"");
-//		weightText.setText("100");
-//		birthdayText.setText("Sunday");
-//		addressText.setText("test");
-//		aadhaarnoText.setText("1234567890");
-//		phonenumberText.setText("1234567890");
-//		studytypeText.setValue("Coronary");
+
 	}
 	
 	public void loadData() 
