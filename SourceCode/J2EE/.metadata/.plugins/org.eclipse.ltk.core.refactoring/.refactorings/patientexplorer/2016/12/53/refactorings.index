@@ -1,0 +1,21 @@
+1482820117066	Delete element
+1482822492462	Delete element
+1482822536269	Copy compilation unit
+1482822590261	Copy compilation unit
+1482822596419	Copy compilation unit
+1482822605132	Copy compilation unit
+1482822630056	Delete element
+1482823071044	Move compilation unit
+1482823076476	Move compilation unit
+1482823102776	Move compilation unit
+1482823108476	Move compilation unit
+1482823112470	Move file
+1482823119235	Delete element
+1482844969212	Encapsulate field 'uid'
+1482850899021	Rename resource 'PatientHibernate.cfg.xml'
+1482850938643	Move file
+1482851662276	Delete element
+1482854154469	Move 'Hibernate.cfg.xml' to 'patientexplorer'
+1482854204932	Move 'Hibernate.cfg.xml' to 'src'
+1482854237464	Rename resource 'Hibernate.cfg.xml'
+1482854315609	Move 'hibernate.cfg.xml' to 'resources'

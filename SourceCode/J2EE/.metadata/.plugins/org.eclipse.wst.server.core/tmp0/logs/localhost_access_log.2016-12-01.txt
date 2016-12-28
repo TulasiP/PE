@@ -1,0 +1,7 @@
+127.0.0.1 - - [01/Dec/2016:22:33:08 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [01/Dec/2016:22:33:10 +0530] "GET /patientexplorer/WEB-INF/classes/Interface.java HTTP/1.1" 404 949
+127.0.0.1 - - [01/Dec/2016:22:34:19 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [01/Dec/2016:22:34:19 +0530] "GET /patientexplorer/WEB-INF/classes/Interface.java HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [01/Dec/2016:22:41:57 +0530] "GET /patientexplorer/WEB-INF/classes/Interface.java HTTP/1.1" 404 949
+127.0.0.1 - - [01/Dec/2016:22:43:12 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [01/Dec/2016:22:43:13 +0530] "GET /patientexplorer/WEB-INF/classes/Interface.java HTTP/1.1" 404 949

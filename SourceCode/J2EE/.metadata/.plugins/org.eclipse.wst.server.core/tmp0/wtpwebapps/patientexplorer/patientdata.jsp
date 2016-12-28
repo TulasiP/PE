@@ -8,11 +8,7 @@
 	<script type="text/javascript">
 		function AlertMessage(result)
 		{
-			a=1;
-			b=2;
-			c=a+b;
-			alert("Test" + c);
-			
+		
 			if(result==0)
 			{
 				alert("UID does not accept zero value");
@@ -163,11 +159,11 @@
 			}
 			if(result==38)
 			{
-				alert("registered succesfully")		
+				alert("registered succesfully")			
 			}
 			if(result==39)
 			{
-				alert("Given uid value already exists")		
+				alert("Given uid value already exists")	
 			}
 			
 		}

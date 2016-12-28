@@ -11,3 +11,5 @@ Proble: Write VBScript automation in C#
 Solution: http://www.codeproject.com/Questions/156466/How-to-Automate-Qtp-with-C-sharp
 			http://stackoverflow.com/questions/13719579/equivalent-code-of-createobject-in-c-sharp
 
+Problem: org.hibernate.internal.util.config.ConfigurationException: Could not locate cfg.xml resource [hibernate.cfg.xml]
+Solution: Create a folder called resources in your  src and put your config file there.
