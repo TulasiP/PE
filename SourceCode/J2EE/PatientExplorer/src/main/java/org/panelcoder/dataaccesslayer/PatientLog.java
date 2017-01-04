@@ -1,10 +1,10 @@
-package org.patientexplorer;
+package org.panelcoder.dataaccesslayer;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class patientlog 
+public class PatientLog 
 {
 	@Id
 	private long UUID;

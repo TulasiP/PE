@@ -1,13 +1,6 @@
-package org.patientexplorer;
-
-
+package org.panelcoder.presentationlayer;
+import org.panelcoder.businesslogiclayer.BusinessLogic;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,17 +10,18 @@ import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/patientservlet")
-public class PatientServlet extends HttpServlet 
+public class Presentation extends HttpServlet 
 {
 	private static final long serialVersionUID = 1L;
 
+	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		
 		HttpSession session=request.getSession();
 		
 		//session.invalidate();
-		BussinessLogicValidation bussinessLogic = new BussinessLogicValidation();
+		BusinessLogic bussinessLogic = new BusinessLogic();
 	    bussinessLogic.validateUid(request, response);
 	    bussinessLogic.validateFirstname(request, response);
 	    bussinessLogic.validateLastname(request,response);
@@ -62,14 +56,8 @@ public class PatientServlet extends HttpServlet
 		}
 		request.getRequestDispatcher("/patientdata.jsp").forward(request, response);
 			
+
 		
-		
-	    
-	    
-	    
-	    
-	    
-	    
 	    
 	    //registerDataOfApplication(request);
 	    //PrintWriter out=response.getWriter();
@@ -95,7 +83,3 @@ public class PatientServlet extends HttpServlet
 
 	}
 }
-		
-
-
-

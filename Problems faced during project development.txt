@@ -13,3 +13,9 @@ Solution: http://www.codeproject.com/Questions/156466/How-to-Automate-Qtp-with-C
 
 Problem: org.hibernate.internal.util.config.ConfigurationException: Could not locate cfg.xml resource [hibernate.cfg.xml]
 Solution: Create a folder called resources in your  src and put your config file there.
+
+Problem: SEVERE: Servlet.service() for servlet [org.patientexplorer.PatientServlet] in context with path [/patientexplorer] threw exception [Servlet execution threw an exception] with root cause 
+         java.lang.ClassNotFoundException: org.springframework.context.ApplicationContext
+Solution: Right Click on your web project in Project Explorer -> select 'Properties' -> select 'Deployment Assembly' -> Add -> Java Build Path Entries -> Next -> Add dependency jars 
+          [You need to tell Eclipse that you want all your dependencies to be published too.]
+

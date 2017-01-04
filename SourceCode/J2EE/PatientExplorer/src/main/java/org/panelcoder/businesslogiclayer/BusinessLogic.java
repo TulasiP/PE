@@ -1,12 +1,12 @@
-package org.patientexplorer;
-
-
+package org.panelcoder.businesslogiclayer;
+import org.panelcoder.businesslogiclayer.contract.IBusinessLogic;
+import org.panelcoder.dataaccesslayer.DataAccess;
 import java.text.SimpleDateFormat;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class BussinessLogicValidation implements IBussinessLogicValidation
+public class BusinessLogic implements IBusinessLogic
 {
    public void validateUid(HttpServletRequest request, HttpServletResponse response)
    {
@@ -679,9 +679,11 @@ public class BussinessLogicValidation implements IBussinessLogicValidation
    
    public boolean registerDataOfApplication(HttpServletRequest request) 
    {
-	   DataAcessLogic data=new DataAcessLogic();
+	   DataAccess data=new DataAccess();
 	   boolean result=data.registerDataOfApplication(request);
 	   return result;
    }
+   
+   
    
 }

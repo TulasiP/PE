@@ -31,8 +31,8 @@ drop table patient;
 Create table patient(UUID nvarchar(50) PRIMARY KEY, Name nvarchar(50), Age int , Sex nvarchar(50),  DOB datetime , Height nvarchar(50) , Wheight nvarchar(50) , BirthDay nvarchar(50),Addres nvarchar(200), AadhaarNo nvarchar(50) , PhoneNo nvarchar(50), StudyType int foreign key(Studytype) references studytype(studyno))
 GO
 
---insert into patient(UUID, Name, DOB, Age, Sex, Height, Wheight, BirthDay, Addres, AadhaarNo) values('1','fsdfs','1/1/1981 12:00:00 AM',12,'Male','5''5"','34','Thursday',',dmfsksf','2323');
---delete from patient
+insert into patient(UUID, Name, DOB, Age, Sex, Height, Wheight, BirthDay, Addres, AadhaarNo) values('1','fsdfs','1/1/1981 12:00:00 AM',12,'Male','5''5"','34','Thursday',',dmfsksf','2323');
+delete from patient
 
 select * from patient;
 select name from patient where UUID=3;
@@ -135,3 +135,26 @@ insert into StudyType values(1,'Coronary')
 insert into StudyType values(2,'Pediatric')
 insert into StudyType values(3,'Electrophysiology')
 select * from StudyType
+
+select * from UserDetails
+
+select * from USER_DETAILS
+
+declare @p1 int
+set @p1=NULL
+exec sp_prepexec @p1 output,N'@P0 int,@P1 bigint,@P2 nvarchar(4000),@P3 bigint,@P4 nvarchar(4000),@P5 nvarchar(4000),@P6 nvarchar(4000),@P7 nvarchar(4000),@P8 nvarchar(4000),@P9 nvarchar(4000),@P10 nvarchar(4000),@P11 bigint,@P12 nvarchar(4000),@P13 int',N'insert into patientlog (Weight, aadhaarno, address, age, birthday, dob, firstname, gender, height, lastname, mailid, mobilenumber, studytype, uid) values (@P0, @P1, @P2, @P3, @P4, @P5, @P6, @P7, @P8, @P9, @P10, @P11, @P12, @P13)                                                                                                            ',75,645786937,N'bhjdshuihj',31,N'sunday',N'12/09/2011',N'tulasi',N'Male',N'5'' 6',N'P',N'gydufgu@yahoo.com',65784897,N'Coronary',6
+select @p1
+
+
+select * from patientlog
+select * from StudyType
+delete from patientlog
+
+
+
+
+
+
+
+
+
