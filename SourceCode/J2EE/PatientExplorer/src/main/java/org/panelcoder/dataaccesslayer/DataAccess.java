@@ -72,8 +72,7 @@ public class DataAccess implements IDataAccess {
 		// String studytype=request.getParameter("studytype");
 		return false;
 
-		// String connectionString =
-		// "jdbc:sqlserver://localhost:1433;database=pcidb;user=sa;password=sa";
+		// String connectionString ="jdbc:sqlserver://localhost:1433;database=pcidb;user=sa;password=sa";
 		// Connection conn=null;
 		// try
 		// {
@@ -81,10 +80,7 @@ public class DataAccess implements IDataAccess {
 		// Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance();
 		// conn=DriverManager.getConnection(connectionString);
 		// Statement selectStudyNoStatement = conn.createStatement();
-		// ResultSet rsStudyNo =
-		// selectStudyNoStatement.executeQuery(String.format("select studyno
-		// from studytype where studytype='%1$s'",
-		// request.getParameter("studytype")));
+		// ResultSet rsStudyNo =selectStudyNoStatement.executeQuery(String.format("select studyno from studytype where studytype='%1$s'",request.getParameter("studytype")));
 		// rsStudyNo.next();
 		// int studyNo=rsStudyNo.getInt(1);
 		// System.out.println(studyNo);
