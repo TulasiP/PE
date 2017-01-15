@@ -1,5 +1,0 @@
-127.0.0.1 - - [23/Oct/2016:22:48:07 +0530] "GET / HTTP/1.1" 404 951
-0:0:0:0:0:0:0:1 - - [23/Oct/2016:22:48:08 +0530] "GET /patientexplorer/registration.html HTTP/1.1" 200 200
-0:0:0:0:0:0:0:1 - - [23/Oct/2016:22:49:09 +0530] "GET /patientexplorer/registration.html HTTP/1.1" 200 127
-0:0:0:0:0:0:0:1 - - [23/Oct/2016:22:49:22 +0530] "GET /patientexplorer/registration.html HTTP/1.1" 200 127
-0:0:0:0:0:0:0:1 - - [23/Oct/2016:22:49:22 +0530] "GET /favicon.ico HTTP/1.1" 404 973

@@ -1,5 +1,0 @@
-0:0:0:0:0:0:0:1 - - [10/Nov/2016:06:41:55 +0530] "GET /patientexplorer/ HTTP/1.1" 200 6560
-0:0:0:0:0:0:0:1 - - [10/Nov/2016:06:57:22 +0530] "GET /patientexplorer/ HTTP/1.1" 200 6573
-0:0:0:0:0:0:0:1 - - [10/Nov/2016:06:57:34 +0530] "GET /patientexplorer/patientservlet?uid=4&firstname=tulasi&lastname=P&age=31&gender=Male&dob=12%2F09%2F2011&height=5%27+6&weight=75&birthday=sunday&address=bhjdshuihj&aadhaarno=645786937&mobilenumber=65784897&mailid=gydufgu@yahoo.com&studytype=Coronary HTTP/1.1" 200 6571
-0:0:0:0:0:0:0:1 - - [10/Nov/2016:06:57:49 +0530] "GET /patientexplorer/ HTTP/1.1" 200 6572
-0:0:0:0:0:0:0:1 - - [10/Nov/2016:06:57:55 +0530] "POST /patientexplorer/patientservlet HTTP/1.1" 200 6572
