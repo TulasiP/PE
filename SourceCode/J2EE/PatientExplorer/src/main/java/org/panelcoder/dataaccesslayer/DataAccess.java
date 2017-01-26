@@ -1,5 +1,7 @@
 package org.panelcoder.dataaccesslayer;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.Session;
@@ -11,24 +13,24 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DataAccess implements IDataAccess {
 
-	public PatientLog registerDataOfApplication(HttpServletRequest request)
+	public PatientLog registerDataOfApplication(Map<String, String> request)
 	{
 		//////////////////////////// USING HIBERNATE////////////////////////
 		PatientLog p = new PatientLog();
 //		p.setUUID(Long.parseLong(request.getParameter("uid")));
-		p.setFirstname(request.getParameter("firstname"));
-		p.setLastname(request.getParameter("lastname"));
-		p.setAge(Long.parseLong(request.getParameter("age")));
-		p.setGender(request.getParameter("gender"));
-		p.setDob(request.getParameter("dob"));
-		p.setHeight(request.getParameter("height"));
-		p.setWheight(Long.parseLong(request.getParameter("weight")));
-		p.setBirthday(request.getParameter("birthday"));
-		p.setAddress(request.getParameter("address"));
-		p.setAadhaarno(Long.parseLong(request.getParameter("aadhaarno")));
-		p.setMobilenumber(Long.parseLong(request.getParameter("mobilenumber")));
-		p.setMailid(request.getParameter("mailid"));
-		p.setStudytype(request.getParameter("studytype"));
+		p.setFirstname(request.get("firstname"));
+		p.setLastname(request.get("lastname"));
+		p.setAge(Long.parseLong(request.get("age")));
+		p.setGender(request.get("gender"));
+		p.setDob(request.get("dob"));
+		p.setHeight(request.get("height"));
+		p.setWheight(Long.parseLong(request.get("weight")));
+		p.setBirthday(request.get("birthday"));
+		p.setAddress(request.get("address"));
+		p.setAadhaarno(Long.parseLong(request.get("aadhaarno")));
+		p.setMobilenumber(Long.parseLong(request.get("mobilenumber")));
+		p.setMailid(request.get("mailid"));
+		p.setStudytype(request.get("studytype"));
 
 		// StudyType s=new StudyType();
 		//
