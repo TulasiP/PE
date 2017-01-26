@@ -182,7 +182,7 @@
 <a href="">Sign-In/Register</a>
 <br><br>
 <form action="patientisregisterdsuccessfully" method="post">
-UID:<br><input type="text" name="uid" value=1>
+UID:<br><input type="text" name="uid">
 <br><br>
 FirstName:<br><input type="text" name="firstname" value="tulasi">
   <br><br>

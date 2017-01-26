@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DataAccess implements IDataAccess {
 
-	public boolean registerDataOfApplication(HttpServletRequest request)
+	public PatientLog registerDataOfApplication(HttpServletRequest request)
 	{
 		//////////////////////////// USING HIBERNATE////////////////////////
 		PatientLog p = new PatientLog();
@@ -71,7 +71,7 @@ public class DataAccess implements IDataAccess {
 		// mobilenumber=Long.parseLong(request.getParameter("mobilenumber"));
 		// String mailid=request.getParameter("mailid");
 		// String studytype=request.getParameter("studytype");
-		return false;
+		return p;
 
 		// String connectionString =
 		// "jdbc:sqlserver://localhost:1433;database=pcidb;user=sa;password=sa";

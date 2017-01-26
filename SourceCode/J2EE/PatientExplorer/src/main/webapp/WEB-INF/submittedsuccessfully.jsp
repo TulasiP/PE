@@ -8,7 +8,7 @@
 </head>
 <body style="background-color: green;">
 	<h1 style="color: blue; font-size: 1000%; text-align: center;">
-		Successfully Registered</h1>
-	<h2>abc${patientLog.getUUID()}</h2>
+		Successfully Registered: ${patientLog.getUUID()}</h1>
+	<h2></h2>
 </body>
 </html>

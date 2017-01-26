@@ -2,7 +2,9 @@ package org.panelcoder.dataaccesslayer.contract;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.panelcoder.dataaccesslayer.PatientLog;
+
 public interface IDataAccess
 {
-	public boolean registerDataOfApplication(HttpServletRequest request);
+	public PatientLog registerDataOfApplication(HttpServletRequest request);
 }

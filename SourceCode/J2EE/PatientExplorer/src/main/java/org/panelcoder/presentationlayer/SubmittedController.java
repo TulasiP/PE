@@ -17,7 +17,7 @@ public class SubmittedController extends AbstractController {
 			throws Exception {
 		HttpSession session = request.getSession();
 		BusinessLogic bussinessLogic = new BusinessLogic();
-		bussinessLogic.validateUid(request, response);
+		//bussinessLogic.validateUid(request, response);
 		bussinessLogic.validateFirstname(request, response);
 		bussinessLogic.validateLastname(request, response);
 		bussinessLogic.validateAge(request, response);
@@ -36,19 +36,19 @@ public class SubmittedController extends AbstractController {
 		bussinessLogic.validateMailid(request, response);
 		bussinessLogic.validateStudytype(request, response);
 
-		boolean saveResult = bussinessLogic.registerDataOfApplication(request);
-		if (saveResult == true) {
-			// successfully stored in database
-			session.setAttribute("valid", 38);
-
-		} else {
-			session.setAttribute("valid", 39);
-		}
-
-		PatientLog pl = new PatientLog();
+		PatientLog saveResult = bussinessLogic.registerDataOfApplication(request);
+//		if (saveResult == true) {
+//			// successfully stored in database
+//			session.setAttribute("valid", 38);
+//
+//		} else {
+//			session.setAttribute("valid", 39);
+//		}
+//
+//		PatientLog pl = new PatientLog();
 
 		ModelAndView model = new ModelAndView("submittedsuccessfully");
-		model.addObject("patientLog", pl);
+		model.addObject("patientLog", saveResult);
 		return model;
 		// return null;
 

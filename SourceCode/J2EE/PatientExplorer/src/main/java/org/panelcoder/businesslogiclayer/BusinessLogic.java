@@ -1,6 +1,8 @@
 package org.panelcoder.businesslogiclayer;
 import org.panelcoder.businesslogiclayer.contract.IBusinessLogic;
 import org.panelcoder.dataaccesslayer.DataAccess;
+import org.panelcoder.dataaccesslayer.PatientLog;
+
 import java.text.SimpleDateFormat;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -677,10 +679,10 @@ public class BusinessLogic implements IBusinessLogic
 		
    }
    
-   public boolean registerDataOfApplication(HttpServletRequest request) 
+   public PatientLog registerDataOfApplication(HttpServletRequest request) 
    {
 	   DataAccess data=new DataAccess();
-	   boolean result=data.registerDataOfApplication(request);
+	   PatientLog result=data.registerDataOfApplication(request);
 	   return result;
    }
    

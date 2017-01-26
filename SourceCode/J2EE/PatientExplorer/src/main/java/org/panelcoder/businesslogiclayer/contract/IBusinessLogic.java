@@ -3,6 +3,8 @@ package org.panelcoder.businesslogiclayer.contract;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.panelcoder.dataaccesslayer.PatientLog;
+
 public interface IBusinessLogic
 {
 	public void validateUid(HttpServletRequest request, HttpServletResponse response);
@@ -19,5 +21,5 @@ public interface IBusinessLogic
 	public void validateMobilenumber(HttpServletRequest request, HttpServletResponse response);
 	public void validateMailid(HttpServletRequest request, HttpServletResponse response);
 	public void validateStudytype(HttpServletRequest request, HttpServletResponse response);
-	public boolean registerDataOfApplication(HttpServletRequest request);
+	public PatientLog registerDataOfApplication(HttpServletRequest request);
 }
