@@ -13,24 +13,24 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DataAccess implements IDataAccess {
 
-	public PatientLog registerDataOfApplication(Map<String, String> request)
+	public PatientLog registerDataOfApplication(PatientLog request)
 	{
 		//////////////////////////// USING HIBERNATE////////////////////////
 		PatientLog p = new PatientLog();
-//		p.setUUID(Long.parseLong(request.getParameter("uid")));
-		p.setFirstname(request.get("firstname"));
-		p.setLastname(request.get("lastname"));
-		p.setAge(Long.parseLong(request.get("age")));
-		p.setGender(request.get("gender"));
-		p.setDob(request.get("dob"));
-		p.setHeight(request.get("height"));
-		p.setWheight(Long.parseLong(request.get("weight")));
-		p.setBirthday(request.get("birthday"));
-		p.setAddress(request.get("address"));
-		p.setAadhaarno(Long.parseLong(request.get("aadhaarno")));
-		p.setMobilenumber(Long.parseLong(request.get("mobilenumber")));
-		p.setMailid(request.get("mailid"));
-		p.setStudytype(request.get("studytype"));
+////		p.setUUID(Long.parseLong(request.getParameter("uid")));
+//		p.setFirstname(request.get("firstname"));
+//		p.setLastname(request.get("lastname"));
+//		p.setAge(Long.parseLong(request.get("age")));
+//		p.setGender(request.get("gender"));
+//		p.setDob(request.get("dob"));
+//		p.setHeight(request.get("height"));
+//		p.setWheight(Long.parseLong(request.get("weight")));
+//		p.setBirthday(request.get("birthday"));
+//		p.setAddress(request.get("address"));
+//		p.setAadhaarno(Long.parseLong(request.get("aadhaarno")));
+//		p.setMobilenumber(Long.parseLong(request.get("mobilenumber")));
+//		p.setMailid(request.get("mailid"));
+//		p.setStudytype(request.get("studytype"));
 
 		// StudyType s=new StudyType();
 		//
@@ -44,7 +44,7 @@ public class DataAccess implements IDataAccess {
 		SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		session.save(p);
+		session.save(request);
 		// session.save(s);
 		session.getTransaction().commit();
 
@@ -73,7 +73,7 @@ public class DataAccess implements IDataAccess {
 		// mobilenumber=Long.parseLong(request.getParameter("mobilenumber"));
 		// String mailid=request.getParameter("mailid");
 		// String studytype=request.getParameter("studytype");
-		return p;
+		return request;
 
 		// String connectionString =
 		// "jdbc:sqlserver://localhost:1433;database=pcidb;user=sa;password=sa";

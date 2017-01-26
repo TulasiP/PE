@@ -8,5 +8,5 @@ import org.panelcoder.dataaccesslayer.PatientLog;
 
 public interface IDataAccess
 {
-	public PatientLog registerDataOfApplication(Map<String, String> request);
+	public PatientLog registerDataOfApplication(PatientLog request);
 }

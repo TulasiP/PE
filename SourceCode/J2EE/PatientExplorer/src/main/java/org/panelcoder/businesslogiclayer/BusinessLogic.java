@@ -683,9 +683,10 @@ public class BusinessLogic implements IBusinessLogic
    
    public PatientLog registerDataOfApplication(Map<String, String> request) 
    {
-	   DataAccess data=new DataAccess();
-	   PatientLog result=data.registerDataOfApplication(request);
-	   return result;
+//	   DataAccess data=new DataAccess();
+//	   PatientLog result=data.registerDataOfApplication(request);
+//	   return result;
+	   return null;
    }
    
    

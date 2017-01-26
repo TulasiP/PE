@@ -182,7 +182,7 @@
 <a href="">Sign-In/Register</a>
 <br><br>
 <form action="patientisregisterdsuccessfully" method="post">
-UID:<br><input type="text" name="uid">
+UID:<br><input type="text" name="UUID">
 <br><br>
 FirstName:<br><input type="text" name="firstname" value="tulasi">
   <br><br>
@@ -201,7 +201,7 @@ DOB:<br><input type="text" name="dob" value=12/09/2011>
 <br><br>
 Height:<br><input type="text" name="height" value= "5' 6"" >
 <br><br>
-Weight:<br><input type="text" name="weight" value=75>
+Weight:<br><input type="text" name="Wheight" value=75>
 <br><br>
 BirthDay:<br><input type="text" name="birthday" value=sunday>
 <br><br>
