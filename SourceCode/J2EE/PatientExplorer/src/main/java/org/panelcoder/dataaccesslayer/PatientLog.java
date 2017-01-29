@@ -1,28 +1,64 @@
 package org.panelcoder.dataaccesslayer;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 @Entity
 public class PatientLog 
 {
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
 	private long UUID;
+	
+	@Size(min=6, max=30)
 	private String firstname;
+	
+	@Size(min=0, max=1)
 	private String lastname;
 	private long age;
+	
+	@IsValidGender
 	private String gender;
+	
+	
 	private String dob;
+	
 	private String height;
 	private long Wheight;
 	private String birthday;
+	
+	
 	private String address;
+	
+	
 	private long aadhaarno;
+	
+	
 	private long mobilenumber;
+	
+	
 	private String mailid;
 	private String studytype;
+	
+	@Embedded
+	private Address patientAddress;
+	public Address getPatientAddress() {
+		return patientAddress;
+	}
+	public void setPatientAddress(Address patientAddress) {
+		this.patientAddress = patientAddress;
+	}
 	/**
 	 * @return the uid
 	 */

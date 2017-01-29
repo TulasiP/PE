@@ -9,6 +9,17 @@
 <body style="background-color: green;">
 	<h1 style="color: blue; font-size: 1000%; text-align: center;">
 		Successfully Registered: ${patientLog.getUUID()}</h1>
+		
+	<table>
+		<tr>
+			<td>Patient Address: </td>
+			<td>country: ${patientLog.patientAddress.country}
+				city: ${patientLog.patientAddress.city}
+				street: ${patientLog.patientAddress.street}
+				pincode: ${patientLog.patientAddress.pincode}</td>
+		</tr>
+		
+	</table>
 	<h2></h2>
 </body>
 </html>
