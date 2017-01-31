@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -171,6 +172,9 @@
 <!-- 	</script> -->
 </head>
 <body style="background-color:yellow;" onload="AlertMessage(<%= session.getAttribute("valid") %>)">
+<a href= "/PatientExplorer/patient?siteLanguage=en"> English </a> | 
+<a href= "/PatientExplorer/patient?siteLanguage=sp"> Spanish </a> |
+<a href= "/PatientExplorer/patient?siteLanguage=fr"> French </a>
 <h1 style="color:blue;font-size:300%;text-align:center;"> Welcome to Patient Registration </h1>
 <h2>${welcomemessage}</h2>
 <p style="text-align:left;"> Information is about the website , it was found in 2016 and purpose of www.patient.com is to sign-in and fix the doctors appointment ,is a framework to link various hospitals across the country for Aadhaar based online registration and appointment system, where counter based OPD registration and appointment system through Hospital Management Information System (HMIS) has been digitalized. The application has been hosted on the cloud services of NIC. Portal facilitates online appointments with various departments of different Hospitals using eKYC data of Aadhaar number, if patient's mobile number is registered with UIDAI. And in case mobile number is not registered with UIDAI it uses patient's name. New Patient will get appointment as well as Unique Health Identification (UHID) number. If Aadhaar number is already linked with UHID number, then appointment number will be given and UHID will remain same.</p>
@@ -186,46 +190,46 @@
 <form:errors path="pl.*"/>
 
 <form action="patientisregisterdsuccessfully" method="post">
-UID:<br><input type="text" name="UUID">
+<spring:message code="label.UUID" /> <input type="text" name="UUID">
 <br><br>
-FirstName:<br><input type="text" name="firstname" value="tulasi">
+<spring:message code="label.firstname" /><input type="text" name="firstname" value="tulasi">
   <br><br>
-LastName:<br><input type="text" name="lastname" value=P>
+<spring:message code="label.lastname" /><input type="text" name="lastname" value=P>
   <br><br>
-Age:<br><input type="text" name="age" value=31>
+<spring:message code="label.age" /><input type="text" name="age" value=31>
 <br><br>
-Gender:<br><select name="gender"> 
+<spring:message code="label.gender" /><select name="gender"> 
   <option value="Male">Male</options>
   <option value="Female">Female</option>
   <option value="Others">Others</option>
   <option value=""></options>
   </select>
   <br><br>
-DOB:<br><input type="text" name="dob" value=12/09/2011>
+<spring:message code="label.dob" /><input type="text" name="dob" value=12/09/2011>
 <br><br>
-Height:<br><input type="text" name="height" value= "5' 6"" >
+<spring:message code="label.height" /><input type="text" name="height" value= "5' 6"" >
 <br><br>
-Weight:<br><input type="text" name="Wheight" value=75>
+<spring:message code="label.Wheight" /><input type="text" name="Wheight" value=75>
 <br><br>
-BirthDay:<br><input type="text" name="birthday" value=sunday>
+<spring:message code="label.birthday" /><input type="text" name="birthday" value=sunday>
 <br><br>
 <table>
-	<tr><td>Patient Address: </td></tr>
+	<tr><td><spring:message code="label.PatientAddress" /></td></tr>
 <tr>
-	<td>Country: <input type="text" name="patientAddress.country" value="India"/></td>
-	<td>City: <input type="text" name="patientAddress.city" value="Bangalore"/></td>
-	<td>street: <input type="text" name="patientAddress.street" value="Ananth Nagar"/></td>
-	<td>pincode: <input type="text" name="patientAddress.pincode" value="560100"/></td>
+	<td><spring:message code="label.country" /> <input type="text" name="patientAddress.country" value="India" /></td>
+	<td><spring:message code="label.city" /> <input type="text" name="patientAddress.city" value="Bangalore" /></td>
+	<td><spring:message code="label.street" /><input type="text" name="patientAddress.street" value="Ananth Nagar" /></td>
+	<td><spring:message code="label.pincode" /><input type="text" name="patientAddress.pincode" value="560100" /></td>
 </tr>
 </table>
 <br><br>
-AadhaarNo:<br> <input type="text" name="aadhaarno" value=645786937>
+<spring:message code="label.aadhaarno" /><input type="text" name="aadhaarno" value=645786937>
 <br><br>
-MobileNumber:<br><input type="text" name="mobilenumber" value=65784897>
+<spring:message code="label.mobilenumber" /><input type="text" name="mobilenumber" value=65784897>
   <br><br>
-MailId:<br><input type="text" name="mailid" value=gydufgu@yahoo.com>
+<spring:message code="label.mailid" /><input type="text" name="mailid" value=gydufgu@yahoo.com>
   <br><br>
-Study Type:<br>
+<spring:message code="label.studytype" />
 <select name=studytype>
 	<option></options>
 	<option>Coronary</options>
@@ -233,7 +237,7 @@ Study Type:<br>
 	<option>ElectroPhysiology</option> 
 </select>
  <br><br> 
-  <input type="submit" value="Register">
+  <spring:message code="label.submit.patientdata" /> <input type="submit" value="Register">
 </form>
 </body>
 </html>
