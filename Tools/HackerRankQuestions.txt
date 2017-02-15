@@ -80,3 +80,68 @@ Sample Input 2:
 
 Sample Output2:
 32
+
+Source Code:
+import java.util.*;
+
+public class sample1 {
+
+	static int[] a = new int[11];
+	static ArrayList<Integer> al = new ArrayList<Integer>();
+	static ArrayList<Integer> finalProducts = new ArrayList<Integer>();
+	static int k = 567601;
+
+	public static void main(String[] args) {
+		a[0] = 4;
+		a[1] = 13;
+		a[2] = 20;
+		a[3] = 32;
+		a[4] = 44;
+		a[5] = 59;
+		a[6] = 61;
+		a[7] = 71;
+		a[8] = 75;
+		a[9] = 86;
+		a[10] = 88;
+
+		// Step1
+		for (int i = 0; i < a.length; i++) {
+			al.add(a[i]);
+		}
+
+		// Step2
+		int size = al.size();
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < al.size(); j++) {
+				ProductOfSubset(j);
+			}
+			al.remove(0);
+		}
+
+		// Step 4
+		int counter = 0;
+		for (int i = 0; i < finalProducts.size(); i++) {
+			if (finalProducts.get(i) < k && finalProducts.get(i) >= 0) {
+				counter++;
+			}
+		}
+
+		for (int i = 0; i < finalProducts.size(); i++) {
+			System.out.println(finalProducts.get(i));
+		}
+
+		System.out.println(counter);
+
+	}
+
+	// Step3
+	private static void ProductOfSubset(int index) {
+		int product = 1;
+		for (int i = 0; i <= index; i++) {
+			product = product * al.get(i);
+		}
+		finalProducts.add(product);
+	}
+
+}
+-------------------------------------------------------------------------
