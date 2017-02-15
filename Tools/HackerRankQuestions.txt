@@ -145,3 +145,58 @@ public class sample1 {
 
 }
 -------------------------------------------------------------------------
+Final Discount Price:
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class discount {
+
+	public static void main(String[] args) {
+
+		int[] d = new int[6];
+		int[] p = new int[6];
+		p[0] = 5;
+		p[1] = 1;
+		p[2] = 3;
+		p[3] = 4;
+		p[4] = 6;
+		p[5] = 2;
+
+		// Find discount values
+		for (int i = 0; i < p.length; i++) { // i is price
+			int counter = 0;
+			for (int j = i + 1; j < p.length; j++) // j is discount
+			{
+				if (p[j] <= p[i]) {
+					d[i] = p[j];
+					counter = 1;
+					break;
+				}
+			}
+
+			if (counter == 0) {
+				d[i] = 0;
+			}
+		}
+
+		// Find total and non discounted index values
+		ArrayList<Integer> al = new ArrayList<Integer>();
+		int total = 0;
+		for (int i = 0; i < p.length; i++) {
+			total = total + p[i] - d[i];
+			if (d[i] == 0) {
+				al.add(i);
+			}
+		}
+
+		System.out.println(total);
+
+		// Print non discount index values
+		for (int i = 0; i < al.size(); i++) {
+			System.out.print(al.get(i) + " ");
+		}
+	}
+
+}
+------------------------------------------------------------------
