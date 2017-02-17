@@ -199,4 +199,32 @@ public class discount {
 	}
 
 }
+
+------------------------------------------------------------------
+Odd divisor summation:
+
+public class OddDivisiorSummation {
+	public static void main(String[] args) {
+		int[] a = new int[3];
+		a[0] = 11;
+		a[1] = 21;
+		a[2] = 7;
+
+		int sumOfOddNumbers = 0;
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 1; j <= a[i]; j++) {
+				if (a[i] % j == 0) {
+					int value = j;
+
+					if (value % 2 != 0) {
+						sumOfOddNumbers = sumOfOddNumbers + value;
+					}
+				}
+			}
+		}
+
+		System.out.println(sumOfOddNumbers);
+	}
+}
+
 ------------------------------------------------------------------
