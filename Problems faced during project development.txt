@@ -19,3 +19,5 @@ Problem: SEVERE: Servlet.service() for servlet [org.patientexplorer.PatientServl
 Solution: Right Click on your web project in Project Explorer -> select 'Properties' -> select 'Deployment Assembly' -> Add -> Java Build Path Entries -> Next -> Add dependency jars 
           [You need to tell Eclipse that you want all your dependencies to be published too.]
 
+Problem: Following error while starting eclipse "Java was started but returned exit code=13"
+Solution: 64-bit OS , 64-bit JDK , 64bit Eclipse (64-bit only)
