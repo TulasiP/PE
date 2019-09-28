@@ -1,0 +1,22 @@
+Java:
+-----
+All concepts in Java has to be refreshed/revisited/brushup follow below mentioned link
+https://www.youtube.com/playlist?list=PL6n9fhu94yhWizLudXueXf16yJzlwNrSc
+
+Tulasi will not learn other than Java example C#, Python, etc...
+Subject Knowledge: 50%
+
+Ant Tool
+Subject Knowledge: 100%
+
+SOQL (Salesforce Object Query Language)
+Subject Knowledge: 0%
+
+SOSL (Salesforce Object Search Language)
+Subject Knowledge: 0%
+
+Administration Course content (C:\Users\Tulasi\OneDrive\Documents\Documents\Salesforce\SFDC Admin & Development Course content.docx)
+Subject Knowledge: 80%
+
+Development Course content (C:\Users\Tulasi\OneDrive\Documents\Documents\Salesforce\SFDC Admin & Development Course content.docx)
+Subject Knowledge: 50%
