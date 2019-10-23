@@ -2,21 +2,41 @@ Java:
 -----
 All concepts in Java has to be refreshed/revisited/brushup follow below mentioned link
 https://www.youtube.com/playlist?list=PL6n9fhu94yhWizLudXueXf16yJzlwNrSc
+Work with Ramesh daily on Java 23-Oct-2019 to 27-Oct-2019
+Classes, Objects, Constructors, Methods, Access specifiers, Scope, Static, if/else, for, while, switch, interfaces, inheritance, collections
+
+SQL (W3schools):
+28-Oct-2019 to 3-Nov-2019
+
+Everyday: (23-Oct-2019 to 23-Nov-2019)
+Resume
+Project (Lightening, Triggers, Indexes, SOAP, REST, Visualforce pages, Apex classes, Integrating Apex classes with SOAP and REST services, SSO configuraion, SOQL, SOSL, Objects/fields, )
+
+Interviews
+More concepts in Salesforce
+
+Thursday interview 3:30
+Friday interview 12:30
 
 Tulasi will not learn other than Java example C#, Python, etc...
 Subject Knowledge: 50%
+Collections
 
 Ant Tool
 Subject Knowledge: 100%
 
-SOQL (Salesforce Object Query Language)
-Subject Knowledge: 0%
+SOQL (Sale sforce Object Query Language)
+Subject Knowledge: 20%
 
 SOSL (Salesforce Object Search Language)
-Subject Knowledge: 0%
+Subject Knowledge: 10%
 
 Administration Course content (C:\Users\Tulasi\OneDrive\Documents\Documents\Salesforce\SFDC Admin & Development Course content.docx)
 Subject Knowledge: 80%
 
 Development Course content (C:\Users\Tulasi\OneDrive\Documents\Documents\Salesforce\SFDC Admin & Development Course content.docx)
 Subject Knowledge: 50%
+
+Model: Objects/fields (Standard objects, Standard fields, Custom Objects, Custom fields)
+View: Visual force pages/CSS (Cascading Style Sheet) {HTML, XML}
+Controller: Visual force controller/Apex code
