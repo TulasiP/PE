@@ -45,3 +45,252 @@ Subject Knowledge: 50%
 Model: Objects/fields (Standard objects, Standard fields, Custom Objects, Custom fields)
 View: Visual force pages/CSS (Cascading Style Sheet) {HTML, XML}
 Controller: Visual force controller/Apex code
+
+C drive active time 100%
+--------------------------------
+Stop Windows search
+Uninstall recent softwares which are suspicious
+
+API Key (https://home.openweathermap.org/api_keys)
+----------
+7cfee5f435941464d0b1e93e1592b689
+
+Salesforce
+----------------
+ammum@cognizant.com
+
+Visual Studio Code and GitHub integration
+###########################################
+Create repository in GitHub MRIScan
+Open Visual Studio Code
+Open Command palette
+Type Git:Clone
+Enter URL https://github.com/TulasiP/MRIScan.git
+Select repository "C:\Users\Tulasi\Documents\GitHub\MRIScan" (Created MRIScan folder)
+Select "Open in new window" for "Would you like to open the clone repository?"
+Open command palette
+Select SFDX: Create Project with Manifest
+Select first option (standard)
+Select folder "C:\Users\Tulasi\Documents\GitHub\MRIScan"
+Execute section Repeat1
+Open command palette
+Select SFDX: Authorize an org
+Select "Project default 'Use login URL defined in sfdx-project.json (https://login.salesforce.com)'"
+Open file manifest\package.xml
+Select SFDX
+Execute section Repeat1
+
+Repeat1:
+----------
+Commit the changes by selecting tick(Right) mark (Provide comment as commit1)
+Select ... from Source COntrol: Git
+Select option push to
+Select https://github.com/TulasiP/MRIScan.git
+Verify the newly uploaded changes in github
+
+##############################################
+
+
+Salesforce Notes:
+-------------------------
+Create Custom Object: Search for Object to create custom object (MyFirstObject)
+Create Custom Field: Scroll down the Object to add custom field (MyFirstField)
+Create VisualForce Page: Search for VisualForce page and select New to create visual force page (MyFirstPage)
+Add object to Tab: Search forTab then click new
+Class name may not be a controller name 
+Why the developer console showing old name instead of updated classname
+Extention name should be class name
+Problem: System.CalloutException: Unauthorized endpoint, please check Setup->Security->Remote site settings. endpoint = http://api.openweathermap.org/data/2.5/weather?q=Delhi&units=metric&APPID=7cfee5f435941464d0b1e93e1592b689
+Solution: 
+
+MyFirstPage
+<apex:page controller="MyFirstObject">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+<apex:pageBlockTable value="{!display}" var="d">
+
+  <apex:column value="{!d.MyLabel__c}"/>
+  
+</apex:pageBlockTable>
+</apex:pageBlockSection>
+</apex:pageBlock> 
+</apex:form>
+</apex:page>
+
+public with sharing class MyFirstObject {
+
+   public List<MyFirstObject__c> lstobj;
+   public List<MyFirstObject__c> getdisplay()
+   {
+   
+   lstobj=[select MyLabel__c from MyFirstObject__c];
+   return lstobj;
+   }
+  
+}
+------------------------
+
+
+
+
+
+
+
+ apex class:
+public with sharing class testopenweather2
+ {
+ 
+  private final Account acc;
+
+public String city{get;set;}
+public String temp{get;set;}
+public String pressure{get;set;}
+public String humidity{get;set;}
+public String temp_min{get;set;}
+public String temp_max{get;set;}
+
+
+
+    public testopenweather2(ApexPages.StandardController stdController) 
+    {
+        this.acc=(Account)stdController.getRecord();
+        acc=[select Id,ShippingCity from Account where Id=:acc.Id];
+    
+        String accountCity=account.ShippingCity;
+        String apiKey='7cfee5f435941464d0b1e93e1592b689';
+        
+        String requestEndpoint='http://api.openweathermap.org/data/2.5/weather';
+        requestEndpoint+='?q='+accountCity;
+        requestEndpoint+='&units=metric';
+        requestEndpoint+='&APPID='+apiKey;
+        
+        Http http=new Http();
+        HttpRequest request=new HttpRequest();
+        request.setEndpoint(requestEndpoint);
+        request.setMethod('GET');
+        HttpResponse response=http.send(request);
+        
+        if(response.getStatusCode()==200)
+        {
+        Map<String,Object> results=(Map<String,Object>)JSON.deserializeUntyped(response.getBody());
+        city=String.valueOf(result.get('name'));
+        Map<String,Objetc> mainresults=(Map<String,Object>)(results.get('main'));
+        
+        temp=String.valueOf(mainresults.get('temp'));
+        temp=String.valueOf(mainresults.get('pressure'));
+        temp=String.valueOf(mainresults.get('humidity'));
+
+        temp=String.valueOf(mainresults.get('temp_min'));
+
+        temp=String.valueOf(mainresults.get('temp_max'));
+
+        }
+        else
+        {
+        ApexPages.Message myMsg=new ApexPages.Message(ApexPages.Severity.ERROR,'There was an error retrieving weather info.');
+        ApexPages.addMessage(myMsg);
+        }
+    }
+
+}
+
+Visual force page:
+
+<apex:page standardController="Account" extensions="testopenweather2">
+<apex:pageBlock title="{!city}">
+<apex:pageBlockSection>
+
+<apex:pageMessages></apex:pageMessages>
+
+<apex:outputText label="Temperature" value="{!temp}"/>
+<apex:outputText label="Pressure" value="{!pressure}"/>
+<apex:outputText label="Humidity" value="{!humidity}"/>
+<apex:outputText label="Minimum Temperature" value="{!temp_min}"/>
+<apex:outputText label="Maximum Temperature" value="{!temp_max}"/>
+
+https://tcs.webex.com/meet/cho
+
+
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:page>
+
+
+
+---------------
+
+public with sharing class dynamicmultiselpicklist {
+    public String selectedoptions { get; set; }
+    public String State { get; set; }
+  public String Country {get;set;}
+
+   //public dynamicmultiselpicklist(ApexPages.StandardController controller) {
+//}
+ Public  string getSelectedoptions()
+ {
+    List<SelectOption> projvalues=new  List<SelectOption>();
+  //      projvalues.add(new SelectOption('','None'));
+  /*  if(Country =='India')
+    {
+        projvalues.add(new SelectOption('TN','TN'));
+        projvalues.add(new SelectOption('AP','AP'));
+    }
+    else if(Country =='USA')
+    {
+        projvalues.add(new SelectOption('OH','OH'));
+        projvalues.add(new SelectOption('NJ','NJ'));
+    }
+    else if(Country =='Others')
+    {
+        projvalues.add(new SelectOption('Invalid','Invalid'));
+    }*/            
+    return 'projvalues';
+ }
+ 
+    /*public PageReference save() {
+        return null;
+    }
+    public dynamicmultiselpicklist() {
+
+
+    }*/
+
+}
+---------------
+/*public PageReference save() {
+        return null;
+    }
+
+
+    public dynamicmultiselpicklist() {
+
+    }
+
+
+    public dynamicmultiselpicklist(ApexPages.StandardController controller) {
+
+    }*/
+
+-----------
+<apex:page controller="dynamicmultiselpicklist">
+<apex:form >
+<apex:pageBlock title="Project Selection" id="mainpb">
+<apex:pageBlockButtons >
+<!--<apex:commandButton action="{!save}" value="save" />-->
+</apex:pageBlockButtons>
+             <apex:actionFunction name="CallAF" rerender="mainpb" />
+   <apex:pageBlockSection title="Dependent Picklist" collapsible="false">
+<apex:selectList label="CountryType" value="{!Country}" multiselect="false" size="1" onchange="CallAF()">
+<apex:selectOption itemValue="" itemLabel="--None--"/>
+<apex:selectOption itemValue="India" itemLabel="India"/  >
+<apex:selectOption itemValue="USA" itemLabel="USA"/>
+<apex:selectOption itemValue="Others" itemLabel="Others"/>
+</apex:selectList>
+<apex:selectList label="State" value="{!State}" multiselect="false" size="1" var="s">
+    <apex:selectOptions value="{!selectedoptions}" />
+</apex:selectList>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>
