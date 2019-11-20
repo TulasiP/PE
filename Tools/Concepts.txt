@@ -63,7 +63,7 @@ Visual Studio Code and GitHub integration
 ###########################################
 Create repository in GitHub MRIScan
 Open Visual Studio Code
-Open Command palette
+Open Command palette (View)
 Type Git:Clone
 Enter URL https://github.com/TulasiP/MRIScan.git
 Select repository "C:\Users\Tulasi\Documents\GitHub\MRIScan" (Created MRIScan folder)
@@ -74,7 +74,7 @@ Select first option (standard)
 Select folder "C:\Users\Tulasi\Documents\GitHub\MRIScan"
 Execute section Repeat1
 Open command palette
-Select SFDX: Authorize an org
+Select SFDX: 	 an org
 Select "Project default 'Use login URL defined in sfdx-project.json (https://login.salesforce.com)'"
 Open file manifest\package.xml
 Select SFDX
@@ -89,7 +89,20 @@ Select https://github.com/TulasiP/MRIScan.git
 Verify the newly uploaded changes in github
 
 ##############################################
+Create project "ForceCode: Create new project"
+Select a new folder "C:\Users\Tulasi\Documents\GitHub\MRIScn"
+Select salesforce Org "ammum@cognizant"
+Select "Developer/Production Org"
+Select Yes for "Automatically push the changes to Org on Save"
+Select "Force Code: ForceCode Menu"
+Select "Retrieve Package/Metadata"
+Select "Get all files from Org"
+##############################################
 
+Format document in .cls file
+category:formatters apex
+Open web browser from salesforce in visual studio Code IDE
+***********************
 
 Salesforce Notes:
 -------------------------
